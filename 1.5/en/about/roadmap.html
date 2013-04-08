@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Roadmap &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
+    <link rel="up" title="About Croogo" href="../about.html" />
+    <link rel="next" title="Contributors" href="contributors.html" />
+    <link rel="prev" title="License" href="license.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../about.html">About Croogo</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Roadmap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x">1.5.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.0.x</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translators.html">Translators</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="x">
+<h2>1.5.x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Plugin download/finder via shell (the CPM - package management idea)</li>
+<li>Default theme: use Twitter Bootstrap</li>
+<li>Admin theme: use Twitter Bootstrap here too? <em>in progress</em> <strong>(aymeric and real34 - occitech)</strong></li>
+<li>Node Preview indicator, display published nodes that has preview flag set for admins.</li>
+<li>Defaults to InnoDb storage engine for mysql</li>
+<li>Plugin Activation ordering and presentation in plugin list</li>
+<li>Migration plugin (cakedc) can be use for installation, and plugins. create and update tables between versions, setup default/baseline data [<a class="reference external" href="http://croogo.lighthouseapp.com/projects/32818/tickets/258">http://croogo.lighthouseapp.com/projects/32818/tickets/258</a>] <em>in progress</em> <strong>(aymeric and real34 - occitech)</strong></li>
+<li>Helpers to create UI components markups, eg: tabs, accordion, panels.  Mostly for /admin <em>in progress</em> <strong>(aymeric and real34 - occitech)</strong></li>
+<li>Pluginify the File Manager, add better folder security <strong>completed (shama)</strong></li>
+<li>Pluginify Blocks <strong>completed (shama)</strong></li>
+<li>Pluginify Taxonomy <strong>completed (shama)</strong></li>
+<li>Replace Email Component with CakeEmail and move to models</li>
+<li>Move functionality in NodesController to the model</li>
+<li>Move CommentsController::add() functionality to model</li>
+<li>Move AttachmentsController::admin_add functionality to model</li>
+<li>Move non-controller CroogoComponent functionality to a Lib</li>
+<li>Pluginify User management (extract as plugin) <strong>completed (rchavik)</strong></li>
+<li>Allow integration of third party auth, eg: twitter oauth, facebook, ldap,</li>
+<li>Replace Config/settings.yml to Config/settings.json, remove spyc from Vendor <strong>completed (rchavik)</strong></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>2.0.x<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fully Pluginize: Croogo can become a set of plugins and a minimalist app that simply installs the default plugin set for easy installation.</li>
+<li>Add namespaces</li>
+<li>PSR-0 and PSR-1 Compat</li>
+<li>Use composer.json instead of Config/plugin.json for extensions</li>
+<li>Offer RESTful API by core, to allow easy integration with third-party apps (could be an iPhone app too)</li>
+<li>Allow admins to update Croogo from admin panel (HTTP download, or backed by Git?)</li>
+<li>Granular ACL <strong>completed (rchavik)</strong></li>
+<li>[Plugin] Contents: Nodes going out, forming a Contents plugin.</li>
+</ul>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="contributors.html" title="Contributors" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="license.html" title="License" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

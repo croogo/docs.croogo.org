@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TineMCE &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Core plugins" href="../core-plugins.html" />
+    <link rel="next" title="Translate" href="translate.html" />
+    <link rel="prev" title="Core plugins" href="../core-plugins.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Core plugins</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">TineMCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="translate.html">Translate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Translators</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="tinemce">
+<h1>TineMCE<a class="headerlink" href="#tinemce" title="Permalink to this headline">¶</a></h1>
+<p>TinyMCE is a popular WYSIWYG editor by Moxiecode Systems. It is packaged and shipped as a plugin with Croogo.</p>
+<p>By default, the editor loads when you add/edit Nodes in your admin panel. To load it in other places and take more control of it&#8217;s settings, see configuration information below.</p>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for this at <cite>/app/Plugin/Tinymce/Config/bootstrap.php</cite> looks like this:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Tinymce.actions&#39;, array(</span>
+<span class="x">    &#39;Nodes/admin_add&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;NodeBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Nodes/admin_edit&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;NodeBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Translate/admin_edit&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;NodeBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<p>For example, if you wanted to load the editor in your Products controller&#8217;s add method for Product model&#8217;s body field, add this line in the end:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Tinymce.actions&#39;, array(</span>
+<span class="x">    &#39;Nodes/admin_add&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;NodeBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Nodes/admin_edit&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;NodeBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Translate/admin_edit&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;NodeBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Products/add&#39; =&gt; array(</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;elements&#39; =&gt; &#39;ProductBody&#39;,</span>
+<span class="x">        ),</span>
+<span class="x">    ),</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="translate.html" title="Translate" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="../core-plugins.html" title="Core plugins" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>File structure &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Locales" href="../locales.html" />
+    <link rel="next" title="Packaging" href="packaging.html" />
+    <link rel="prev" title="Locales" href="../locales.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers.html">Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../translators.html">Translators</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../locales.html">Locales</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">File structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packaging.html">Packaging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="file-structure">
+<h1>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h1>
+<p>For example, if you want to translate Croogo into Bengali (whose ISO 639-2 language code is ben), the file structure will be:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">app/Locale/ben/
+- LC_MESSAGES/</p>
+<blockquote>
+<div><ul class="simple">
+<li>default.po</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Best way to do it is by copying the default.pot file, and then translating it using a software like Poedit. Do not forget to rename the .pot file as .po.</p>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="packaging.html" title="Packaging" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="../locales.html" title="Locales" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

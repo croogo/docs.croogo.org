@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Basic layout &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bem vindo</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="basic-layout">
+<h1>Basic layout<a class="headerlink" href="#basic-layout" title="Permalink to this headline">¶</a></h1>
+<p>Lets call our theme MyTheme, so we need to place our default layout at /app/View/Themed/MyTheme/Layouts/default.ctp.</p>
+<p>At the beginning, we have something like this:</p>
+<blockquote>
+<div><p>&lt;!DOCTYPE html PUBLIC &#8220;-//W3C//DTD XHTML 1.0 Strict//EN&#8221; &#8220;<a class="reference external" href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</a>&#8220;&gt;
+&lt;html xmlns=&#8221;<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>&#8221; xml:lang=&#8221;en&#8221; lang=&#8221;en&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;head&gt;
+&lt;/head&gt;</p>
+<p>&lt;body&gt;
+&lt;/body&gt;</p>
+</div></blockquote>
+<p>&lt;/html&gt;</p>
+</div></blockquote>
+<div class="section" id="the-head">
+<h2>The HEAD<a class="headerlink" href="#the-head" title="Permalink to this headline">¶</a></h2>
+<p>This is where your page title, meta information, css, javascript info are shown. Croogo has a LayoutHelper to make things easier for you. You also get to use CakePHP&#8217;s core helpers for more general tasks.</p>
+<div class="section" id="page-title">
+<h3>Page title<a class="headerlink" href="#page-title" title="Permalink to this headline">¶</a></h3>
+<p>$title_for_layout variable is set from your controller (can be done from views too). And Configure::read(&#8216;Site.title&#8217;) is your website&#8217;s title that you can set from admin panel under Settings &gt; Site.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd>&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="meta-tags">
+<h3>Meta tags<a class="headerlink" href="#meta-tags" title="Permalink to this headline">¶</a></h3>
+<p>This is as simple as calling a method from LayoutHelper. $this-&gt;Layout-&gt;meta() outputs all meta tags for your content.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd>&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;
+&lt;?php echo $this-&gt;Layout-&gt;meta(); ?&gt;</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="feeds">
+<h3>Feeds<a class="headerlink" href="#feeds" title="Permalink to this headline">¶</a></h3>
+<p>$this-&gt;Layout-&gt;feed() will output your RSS feed link for your promoted content.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd><p class="first">&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;
+&lt;?php</p>
+<blockquote>
+<div>echo $this-&gt;Layout-&gt;meta();
+echo $this-&gt;Layout-&gt;feed();</div></blockquote>
+<p class="last">?&gt;</p>
+</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="css">
+<h3>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<p>If you have your css file placed under /app/View/Themed/MyTheme/webroot/css/theme.css:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd><p class="first">&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;
+&lt;?php</p>
+<blockquote>
+<div>echo $this-&gt;Layout-&gt;meta();
+echo $this-&gt;Layout-&gt;feed();
+echo $this-&gt;Html-&gt;css(array(&#8216;theme&#8217;));</div></blockquote>
+<p class="last">?&gt;</p>
+</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="javascript">
+<h3>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h3>
+<p>Croogo has a Croogo object in javascript that stores information like the application&#8217;s base path, etc. This is useful for other javascript related tasks. It can done by calling a single method $layout-&gt;js():</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd><p class="first">&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;
+&lt;?php</p>
+<blockquote>
+<div>echo $this-&gt;Layout-&gt;meta();
+echo $this-&gt;Layout-&gt;feed();
+echo $this-&gt;Html-&gt;css(array(&#8216;theme&#8217;));
+echo $this-&gt;Layout-&gt;js();</div></blockquote>
+<p class="last">?&gt;</p>
+</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+</div></blockquote>
+<p>CakePHP allows you to load javascript from your views so they go directly inside HEAD. For this, you need to echo out the variable $scripts_for_layout.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd><p class="first">&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;
+&lt;?php</p>
+<blockquote>
+<div>echo $this-&gt;Layout-&gt;meta();
+echo $this-&gt;Layout-&gt;feed();
+echo $this-&gt;Html-&gt;css(array(&#8216;theme&#8217;));
+echo $this-&gt;Layout-&gt;js();
+echo $scripts_for_layout;</div></blockquote>
+<p class="last">?&gt;</p>
+</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="the-body">
+<h2>The BODY<a class="headerlink" href="#the-body" title="Permalink to this headline">¶</a></h2>
+<p>This is where you output the actual content that is visible in the browser.</p>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<p>The output generated from your view is available in the variable $content_for_layout:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;body&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div id=&#8221;content&#8221;&gt;</dt>
+<dd>&lt;?php echo $content_for_layout; ?&gt;</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/body&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="menu">
+<h3>Menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h3>
+<p>If you want to show a menu with alias main, it is as simple as $layout-&gt;menu(&#8216;main&#8217;). This will generate a nested unordered list of your main menu:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;body&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div id=&#8221;nav&#8221;&gt;</dt>
+<dd>&lt;?php echo $this-&gt;Layout-&gt;menu(&#8216;main&#8217;); ?&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;content&#8221;&gt;</dt>
+<dd>&lt;?php echo $content_for_layout; ?&gt;</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/body&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="blocks">
+<h3>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h3>
+<p>If you want to show the blocks that belong to right region, just add $layouts-&gt;blocks(&#8216;right&#8217;):</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;body&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div id=&#8221;nav&#8221;&gt;</dt>
+<dd>&lt;?php echo $this-&gt;Layout-&gt;menu(&#8216;main&#8217;); ?&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;content&#8221;&gt;</dt>
+<dd>&lt;?php echo $content_for_layout; ?&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;sidebar&#8221;&gt;</dt>
+<dd>&lt;?php echo $this-&gt;Layout-&gt;blocks(&#8216;right&#8217;); ?&gt;</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/body&gt;</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="final-code-of-default-ctp">
+<h2>Final code of default.ctp<a class="headerlink" href="#final-code-of-default-ctp" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>&lt;!DOCTYPE html PUBLIC &#8220;-//W3C//DTD XHTML 1.0 Strict//EN&#8221; &#8220;<a class="reference external" href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</a>&#8220;&gt;
+&lt;html xmlns=&#8221;<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>&#8221; xml:lang=&#8221;en&#8221; lang=&#8221;en&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head&gt;</dt>
+<dd><p class="first">&lt;title&gt;&lt;?php echo $title_for_layout . &#8216; | &#8216; . Configure::read(&#8216;Site.title&#8217;); ?&gt;&lt;/title&gt;
+&lt;?php</p>
+<blockquote>
+<div>echo $this-&gt;Layout-&gt;meta();
+echo $this-&gt;Layout-&gt;feed();
+echo $this-&gt;Html-&gt;css(array(&#8216;theme&#8217;));
+echo $this-&gt;Layout-&gt;js();
+echo $scripts_for_layout;</div></blockquote>
+<p class="last">?&gt;</p>
+</dd>
+</dl>
+<p>&lt;/head&gt;</p>
+<dl class="docutils">
+<dt>&lt;body&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div id=&#8221;nav&#8221;&gt;</dt>
+<dd>&lt;?php echo $this-&gt;Layout-&gt;menu(&#8216;main&#8217;); ?&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;content&#8221;&gt;</dt>
+<dd>&lt;?php echo $content_for_layout; ?&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;sidebar&#8221;&gt;</dt>
+<dd>&lt;?php echo $this-&gt;Layout-&gt;blocks(&#8216;right&#8217;); ?&gt;</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/body&gt;</p>
+</div></blockquote>
+<p>&lt;/html&gt;</p>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

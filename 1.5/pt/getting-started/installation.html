@@ -1,0 +1,158 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Instalação &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
+    <link rel="up" title="Bem vindo" href="../index.html" />
+    <link rel="next" title="Links úteis" href="links.html" />
+    <link rel="prev" title="Requisitos" href="requirements.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Bem vindo</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#sobre">Sobre</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#primeiros-passos">Primeiros Passos</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="features.html">Recursos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo.html">Demonstração</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements.html">Requisitos</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Instalação</a></li>
+<li class="toctree-l3"><a class="reference internal" href="links.html">Links úteis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="instalacao">
+<h1>Instalação<a class="headerlink" href="#instalacao" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="instalacao-pela-interface-web">
+<h2>Instalação pela interface Web<a class="headerlink" href="#instalacao-pela-interface-web" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Extraia o arquivo. Envie o conteúdo para o seu servidor.</li>
+<li>Crie um novo banco de dados MySQL (collation utf8_unicode_ci)</li>
+<li>Visite <a class="reference external" href="http://seu-site.com/">http://seu-site.com/</a> de seu navegador e siga as instruções.</li>
+</ul>
+</div>
+<div class="section" id="instalacao-manual">
+<h2>Instalação Manual<a class="headerlink" href="#instalacao-manual" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Extraia o arquivo. Envie o conteúdo para o seu servidor.</li>
+<li>Crie um novo banco de dados MySQL (collation utf8_unicode_ci), e use esses dois arquivos de dump do SQL nesta orderm:<ul>
+<li>app/Config/Schema/sql/croogo.sql</li>
+<li>app/Config/Schema/sql/croogo_data.sql</li>
+</ul>
+</li>
+<li>Renomeie:<ul>
+<li>app/Config/database.php.install para database.php, e edite os detalhes.</li>
+<li>app/Config/croogo.php.install para croogo.php, e edite os detalhes.</li>
+<li>app/Config/settings.yml.install para settings.yml</li>
+</ul>
+</li>
+<li>Você pode acessar o painel de administração no <a class="reference external" href="http://your-site.com/admin">http://your-site.com/admin</a>. O instalador deve exibir uma página para você criar o usuário administrativo.</li>
+</ul>
+<p>É recomendado que você instale Croogo usando o instalador pela interface web por razões de segurança.</p>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="links.html" title="Links úteis" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="requirements.html" title="Requisitos" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

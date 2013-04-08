@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Behaviors &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="next" title="Views" href="views.html" />
+    <link rel="prev" title="Models" href="models.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Behaviors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpers.html">Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Translators</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="behaviors">
+<h1>Behaviors<a class="headerlink" href="#behaviors" title="Permalink to this headline">¶</a></h1>
+<p>Read the CakePHP docs on Behaviors: <a class="reference external" href="http://book.cakephp.org/2.0/en/models/behaviors.html">http://book.cakephp.org/2.0/en/models/behaviors.html</a>.</p>
+<p>Model behaviors are a way to organize some of the functionality defined in CakePHP models. They allow us to separate logic that may not be directly related to a model, but needs to be there. By providing a simple yet powerful way to extend models, behaviors allow us to attach functionality to models by defining a simple class variable. That&#8217;s how behaviors allow models to get rid of all the extra weight that might not be part of the business contract they are modeling, or that is also needed in different models and can then be extrapolated.</p>
+<p>As an example, consider a model that gives us access to a database table which stores structural information about a tree. Removing, adding, and migrating nodes in the tree is not as simple as deleting, inserting, and editing rows in the table. Many records may need to be updated as things move around. Rather than creating those tree-manipulation methods on a per model basis (for every model that needs that functionality), we could simply tell our model to use the TreeBehavior, or in more formal terms, we tell our model to behave as a Tree. This is known as attaching a behavior to a model. With just one line of code, our CakePHP model takes on a whole new set of methods that allow it to interact with the underlying structure.</p>
+</div>
+<div class="section" id="code">
+<h1>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
+<p>If your Behavior&#8217;s name is Example, it would be found at <cite>/app/Model/Behavior/ExampleBehavior.php</cite>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">ExampleBehavior</span> <span class="k">extends</span> <span class="nx">ModelBehavior</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Model</span><span class="p">,</span> <span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">settings</span><span class="p">[</span><span class="nv">$Model</span><span class="o">-&gt;</span><span class="na">alias</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeFind</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Model</span><span class="p">,</span> <span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterFind</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Model</span><span class="p">,</span> <span class="nv">$results</span><span class="p">,</span> <span class="nv">$primary</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeDelete</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Model</span><span class="p">,</span> <span class="nv">$cascade</span> <span class="o">=</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterDelete</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Model</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeValidate</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Model</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="plugin-behaviors">
+<h2>Plugin Behaviors<a class="headerlink" href="#plugin-behaviors" title="Permalink to this headline">¶</a></h2>
+<p>If it is Example plugin&#8217;s behavior, it would be found at <cite>/app/Plugin/Example/Model/Behavior/ExampleBehavior.php</cite>.</p>
+<div class="section" id="using-behaviors-in-models">
+<h3>Using Behaviors in Models<a class="headerlink" href="#using-behaviors-in-models" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Recipe</span> <span class="k">extends</span> <span class="nx">AppModel</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nv">$actsAs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;Example&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span> <span class="c1">// &#39;Example.Example&#39; if it is from Example plugin</span>
+            <span class="s1">&#39;config1&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value here&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;config2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value here&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="views.html" title="Views" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="models.html" title="Models" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

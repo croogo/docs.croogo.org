@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>JSON file &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bem vindo</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="json-file">
+<h1>JSON file<a class="headerlink" href="#json-file" title="Permalink to this headline">¶</a></h1>
+<p>A theme.json file is required for every theme in Croogo. This is required because themes can store useful information like menus and regions it uses, and this way it allows Croogo to query the database and make these information available to the theme without breaking MVC.</p>
+<p>Content of an example theme.json file found at app/View/Themed/MyTheme/webroot/theme.json is shown below:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><p class="first">&#8220;name&#8221; : &#8220;Sample&#8221;,
+&#8220;description&#8221; : &#8220;Sample theme for Croogo&#8221;,
+&#8220;screenshot&#8221; : &#8220;screenshot.png&#8221;,</p>
+<p>&#8220;author&#8221; : &#8220;Author Name&#8221;,
+&#8220;authorEmail&#8221; : &#8220;<a class="reference external" href="mailto:author&#37;&#52;&#48;email&#46;com">author<span>&#64;</span>email<span>&#46;</span>com</a>&#8221;,
+&#8220;authorUrl&#8221; : &#8220;<a class="reference external" href="http://authorswebsite.com">http://authorswebsite.com</a>&#8221;,</p>
+<dl class="last docutils">
+<dt>&#8220;menus&#8221; <span class="classifier-delimiter">:</span> <span class="classifier">[</span></dt>
+<dd>&#8220;main&#8221;,
+&#8220;footer&#8221;
+],</dd>
+<dt>&#8220;regions&#8221; <span class="classifier-delimiter">:</span> <span class="classifier">[</span></dt>
+<dd>&#8220;right&#8221;
+]</dd>
+</dl>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<ul class="simple">
+<li>name: your theme&#8217;s name</li>
+<li>description: your theme&#8217;s description</li>
+<li>screenshot: a small preview of your theme placed under app/View/Themed/MyTheme/webroot/img/screenshot.png</li>
+<li>author: your name</li>
+<li>authorEmail: your email</li>
+<li>authorUrl: your website</li>
+<li>menus: a list of menu aliases that the theme uses</li>
+<li>regions: a list of regions that the theme uses for showing blocks</li>
+<li>vocabularies (optional): a list of vocabulary aliases that the theme uses</li>
+</ul>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

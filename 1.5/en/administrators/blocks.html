@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Blocks &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
+    <link rel="up" title="Administrators" href="../administrators.html" />
+    <link rel="next" title="Extensions" href="extensions.html" />
+    <link rel="prev" title="Menus" href="menus.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../administrators.html">Administrators</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="content.html">Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#elements">Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-display-a-this-and-that-in-a-block">How to display a THIS and THAT in a block?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="media.html">Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contacts.html">Contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translators.html">Translators</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="blocks">
+<h1>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h1>
+<p>Blocks are what you see in the sidebar (‘right’ region in default theme) as boxes. They belong to a particular region.</p>
+<div class="section" id="elements">
+<h2>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h2>
+<p>All blocks are rendered via block.ctp element (found in app/Plugin/Blocks/View/Elements/block.ctp). You can use your own element too for your blocks by editing &#8216;element&#8217; field when adding a block.</p>
+<p>Tip: If it is a plugin element, enter &#8216;PluginName.element_name&#8217;.</p>
+</div>
+<div class="section" id="how-to-display-a-this-and-that-in-a-block">
+<h2>How to display a THIS and THAT in a block?<a class="headerlink" href="#how-to-display-a-this-and-that-in-a-block" title="Permalink to this headline">¶</a></h2>
+<p>You are able to show an element, menu, vocabulary (nested list of terms), or a list of nodes by entering specially formatted text in your block’s body.</p>
+<div class="section" id="element">
+<h3>Element<a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h3>
+<p>For an element with file name my_element.ctp:</p>
+<blockquote>
+<div>[element:my_element] OR [e:my_element]</div></blockquote>
+<p>Passing variables to your element:</p>
+<blockquote>
+<div>[element:my_element myVar=&#8221;value here&#8221; anotherVar=&#8221;value here&#8221;]</div></blockquote>
+<p>For plugin elements:</p>
+<blockquote>
+<div>[element:my_element plugin=&#8221;my_plugin&#8221;]</div></blockquote>
+</div>
+<div class="section" id="menu">
+<h3>Menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h3>
+<p>For a Menu with alias main:</p>
+<blockquote>
+<div>[menu:main] OR [m:main]</div></blockquote>
+</div>
+<div class="section" id="vocabulary">
+<h3>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h3>
+<p>For a Vocabulary with alias categories:</p>
+<blockquote>
+<div>[vocabulary:categories] OR [v:categories]</div></blockquote>
+</div>
+<div class="section" id="nodes">
+<h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
+<p>For example, you want to show a list of 5 most recent blog posts as a block:</p>
+<blockquote>
+<div>[node:recent_posts conditions=&#8221;Node.type:blog;Node.status:1&#8221; order=&#8221;Node.id DESC&#8221; limit=&#8221;5&#8221;]</div></blockquote>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="extensions.html" title="Extensions" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="menus.html" title="Menus" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

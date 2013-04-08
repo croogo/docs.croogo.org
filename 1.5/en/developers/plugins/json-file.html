@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>JSON file &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Plugins" href="../plugins.html" />
+    <link rel="next" title="Migrations" href="migrations.html" />
+    <link rel="prev" title="File structure" href="file-structure.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../plugins.html">Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bootstrap.html">Bootstrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">File structure</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">JSON file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrations.html">Migrations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Translators</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="json-file">
+<h1>JSON file<a class="headerlink" href="#json-file" title="Permalink to this headline">¶</a></h1>
+<p>A plugin.json file is required for every plugin in Croogo that requires to be activated from admin panel. It stores useful information like the developer&#8217;s contact details, as well as information on it&#8217;s dependencies.</p>
+<p>If your plugin&#8217;s name is Example, the content of <cite>plugin.json</cite> file at <cite>app/Plugin/Example/Config/plugin.json</cite> could be:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">{</span>
+<span class="x">    &quot;name&quot;: &quot;Example&quot;,</span>
+<span class="x">    &quot;description&quot;: &quot;Example plugin for demonstrating hook system&quot;,</span>
+
+<span class="x">    &quot;author&quot;: &quot;Author Name&quot;</span>
+<span class="x">    &quot;authorEmail&quot;: &quot;author@example.com&quot;</span>
+<span class="x">    &quot;authorUrl&quot;: &quot;http://example.com&quot;</span>
+
+<span class="x">    &quot;dependencies&quot;: {</span>
+<span class="x">      &quot;plugins&quot;: [</span>
+<span class="x">        &quot;acl&quot;,</span>
+<span class="x">          &quot;extensions&quot;</span>
+<span class="x">          ]</span>
+<span class="x">        }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>name: your plugin&#8217;s name</li>
+<li>description: your plugin&#8217;s description</li>
+<li>author: your name</li>
+<li>authorEmail: your email address</li>
+<li>authorUrl: your website</li>
+<li>dependencies (optional): list of other plugins that this plugin depends on</li>
+</ul>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="migrations.html" title="Migrations" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="file-structure.html" title="File structure" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>
