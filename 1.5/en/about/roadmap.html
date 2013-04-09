@@ -61,8 +61,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../about.html">About Croogo</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Roadmap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#x">1.5.x</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.0.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x">2.0.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.5.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.5.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.5.0</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contributors.html">Contributors</a></li>
@@ -84,40 +86,52 @@
   <div class="section" id="roadmap">
 <h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="x">
-<h2>1.5.x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h2>
+<h2>2.0.x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Plugin download/finder via shell (the CPM - package management idea)</li>
-<li>Default theme: use Twitter Bootstrap</li>
-<li>Admin theme: use Twitter Bootstrap here too? <em>in progress</em> <strong>(aymeric and real34 - occitech)</strong></li>
-<li>Node Preview indicator, display published nodes that has preview flag set for admins.</li>
-<li>Defaults to InnoDb storage engine for mysql</li>
-<li>Plugin Activation ordering and presentation in plugin list</li>
-<li>Migration plugin (cakedc) can be use for installation, and plugins. create and update tables between versions, setup default/baseline data [<a class="reference external" href="http://croogo.lighthouseapp.com/projects/32818/tickets/258">http://croogo.lighthouseapp.com/projects/32818/tickets/258</a>] <em>in progress</em> <strong>(aymeric and real34 - occitech)</strong></li>
-<li>Helpers to create UI components markups, eg: tabs, accordion, panels.  Mostly for /admin <em>in progress</em> <strong>(aymeric and real34 - occitech)</strong></li>
-<li>Pluginify the File Manager, add better folder security <strong>completed (shama)</strong></li>
-<li>Pluginify Blocks <strong>completed (shama)</strong></li>
-<li>Pluginify Taxonomy <strong>completed (shama)</strong></li>
-<li>Replace Email Component with CakeEmail and move to models</li>
-<li>Move functionality in NodesController to the model</li>
-<li>Move CommentsController::add() functionality to model</li>
-<li>Move AttachmentsController::admin_add functionality to model</li>
-<li>Move non-controller CroogoComponent functionality to a Lib</li>
-<li>Pluginify User management (extract as plugin) <strong>completed (rchavik)</strong></li>
-<li>Allow integration of third party auth, eg: twitter oauth, facebook, ldap,</li>
-<li>Replace Config/settings.yml to Config/settings.json, remove spyc from Vendor <strong>completed (rchavik)</strong></li>
-</ul>
-</div>
-<div class="section" id="id1">
-<h2>2.0.x<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Fully Pluginize: Croogo can become a set of plugins and a minimalist app that simply installs the default plugin set for easy installation.</li>
+<li><span class="strike">Fully Pluginize: Croogo can become a set of plugins and a minimalist app that simply installs the default plugin set for easy installation.</span> <strong>(shama, real34, rchavik)</strong></li>
 <li>Add namespaces</li>
 <li>PSR-0 and PSR-1 Compat</li>
 <li>Use composer.json instead of Config/plugin.json for extensions</li>
 <li>Offer RESTful API by core, to allow easy integration with third-party apps (could be an iPhone app too)</li>
 <li>Allow admins to update Croogo from admin panel (HTTP download, or backed by Git?)</li>
-<li>Granular ACL <strong>completed (rchavik)</strong></li>
+<li><span class="strike">Granular ACL</span> <strong>(rchavik)</strong></li>
 <li>[Plugin] Contents: Nodes going out, forming a Contents plugin.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>1.5.2<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Going stable</li>
+<li>Doc updates</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>1.5.1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><span class="strike">Plugin Activation ordering and presentation in plugin list</span></li>
+<li><span class="strike">Helpers to create UI components markups, eg: tabs, accordion, panels.  Mostly for /admin</span> <strong>(aymeric and real34 - occitech)</strong></li>
+<li><span class="strike">Replace Email Component with CakeEmail and move to models</span></li>
+<li><span class="strike">Move functionality in NodesController to the model</span></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>1.5.0<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Plugin download/finder via shell (the CPM - package management idea)</li>
+<li>Default theme: use Twitter Bootstrap</li>
+<li><span class="strike">Admin theme: use Twitter Bootstrap here too?</span> <strong>(aymeric and real34 - occitech)</strong></li>
+<li>Node Preview indicator, display published nodes that has preview flag set for admins.</li>
+<li><span class="strike">Defaults to InnoDb storage engine for mysql</span></li>
+<li><span class="strike">Migration plugin (cakedc) can be use for installation, and plugins. create and update tables between versions, setup default/baseline data [http://croogo.lighthouseapp.com/projects/32818/tickets/258]</span> <strong>(aymeric and real34 - occitech)</strong></li>
+<li><span class="strike">Pluginify the File Manager, add better folder security</span> <strong>(shama)</strong></li>
+<li><span class="strike">Pluginify Blocks</span> <strong>(shama)</strong></li>
+<li><span class="strike">Pluginify Taxonomy</span> <strong>(shama)</strong></li>
+<li><span class="strike">Move CommentsController::add() functionality to model</span></li>
+<li><span class="strike">Move AttachmentsController::admin_add functionality to model</span></li>
+<li><span class="strike">Move non-controller CroogoComponent functionality to a Lib</span></li>
+<li><span class="strike">Pluginify User management (extract as plugin)</span> <strong>(rchavik)</strong></li>
+<li>Allow integration of third party auth, eg: twitter oauth, facebook, ldap,</li>
+<li><span class="strike">Replace Config/settings.yml to Config/settings.json, remove spyc from Vendor</span> <strong>(rchavik)</strong></li>
 </ul>
 </div>
 </div>
