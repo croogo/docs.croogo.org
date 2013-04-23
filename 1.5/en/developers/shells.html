@@ -72,6 +72,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">Shells</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-shell">Install Shell</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ext-shell">Ext Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings-shell">Settings Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#users-shell">Users Shell</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
@@ -116,6 +118,39 @@
 </div>
 <p>To deactivate:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake ext deactivate plugin Megamenu</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="settings-shell">
+<h2>Settings Shell<a class="headerlink" href="#settings-shell" title="Permalink to this headline">¶</a></h2>
+<p>The Settings plugin provides a few utility command to manipulate configuration values:</p>
+<ul>
+<li><p class="first">Reading a configuration:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings read Site.title</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Writing a configuration value:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings write Site.title &quot;My Awesome Site&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Deleting a configuration value:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings delete Custom.settingValue</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Updating version information after an upgrade:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings upgrade_version_info</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="users-shell">
+<h2>Users Shell<a class="headerlink" href="#users-shell" title="Permalink to this headline">¶</a></h2>
+<p>You can reset a user&#8217;s password from the shell:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake users.users reset admin password</span>
 </pre></div>
 </div>
 </div>
