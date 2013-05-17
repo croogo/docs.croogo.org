@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Modelos &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Entendiendo CakePHP" href="../understanding-cakephp.html" />
+    <link rel="next" title="Comportamientos" href="behaviors.html" />
+    <link rel="prev" title="Componentes" href="components.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bienvenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Acerca de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Empezando con Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administradores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Dise?adores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Desarrolladores</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Trabajando con Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Entendiendo CakePHP</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="controllers.html">Controladores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="components.html">Componentes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Modelos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="behaviors.html">Comportamientos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="behaviors.html#codigo">Codigo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html">Vistas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#codigo">Codigo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpers.html">Auxiliares (helpers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Retrollamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Bloques de Vista</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins del nucleo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells.html">Consolas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traductores</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="modelos">
+<h1>Modelos<a class="headerlink" href="#modelos" title="Permalink to this headline">¶</a></h1>
+<p>Lee la documentacion de CakePHP de Modelos:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/models.html">http://book.cakephp.org/2.0/en/models.html</a>.</p>
+<div class="section" id="que-es-un-modelo">
+<h2>Que es un modelo?<a class="headerlink" href="#que-es-un-modelo" title="Permalink to this headline">¶</a></h2>
+<p>Los modelos representan la informacion y son usados en las aplicaciones de CakePHP para accesar a la informacion. Un Modelo usualmente representa una tabla de base de datos pero tambien para accesar cualquier cosa que almacene informacion como archivos, registros LDAP, eventos de iCal o filas de un archivo CSV.</p>
+<p>Un modelo puede ser asociado con otros modelos. Por ejemplo, una Receta puede estar asociada con el Autor de esa receta como tambien con los Ingredientes de la receta.
+Codigo</p>
+<p>Si tienes una tabla llamada &#8216;recipes&#8217; (con columnas id, title, body), el modelo deberia llamarse Recipe y estar en  <cite>/app/Model/Recipe.php</cite>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Recipe</span> <span class="k">extends</span> <span class="nx">AppModel</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="modelo-de-plugins">
+<h3>Modelo de Plugins<a class="headerlink" href="#modelo-de-plugins" title="Permalink to this headline">¶</a></h3>
+<p>Si es el modelo del plugin de Recipes, entonces estaria en:</p>
+<p><cite>/app/Plugin/Recipes/Model/Recipe.php</cite>.</p>
+</div>
+</div>
+<div class="section" id="usando-modelos-en-controladores">
+<h2>Usando modelos en Controladores<a class="headerlink" href="#usando-modelos-en-controladores" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">RecipesController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nv">$uses</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;Recipe&#39;</span><span class="p">,</span> <span class="c1">// &#39;Recipes.Recipe&#39; Si es parte del plugin Recipes</span>
+    <span class="p">);</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Obtener el record con ID 123 de la tabla de recetasretrieve record with ID 123 from recipes            $recipe = $this-&gt;Recipe-&gt;findById(123);</span>
+
+        <span class="c1">// Establecer la variable $recipe para que pueda ser accesada despues por una vista</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;recipe&#39;</span><span class="p">,</span> <span class="nv">$recipe</span><span class="p">);</span> <span class="c1">// or $this-&gt;set(compact(&#39;recipe&#39;));</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="behaviors.html" title="Comportamientos" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="components.html" title="Componentes" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

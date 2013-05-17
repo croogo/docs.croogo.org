@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Archivo JSON &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Plantillas" href="../themes.html" />
+    <link rel="next" title="Distribucion Basica" href="basic-layout.html" />
+    <link rel="prev" title="Estructura de archivos" href="file-structure.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bienvenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Acerca de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Empezando con Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administradores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Dise?adores</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Plantillas</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Estructura de archivos</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Archivo JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Distribucion Basica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Funciones de plantillas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Sistema de repliegue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packaging.html">Empaquetado</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers.html">Desarrolladores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traductores</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="archivo-json">
+<h1>Archivo JSON<a class="headerlink" href="#archivo-json" title="Permalink to this headline">¶</a></h1>
+<p>Un archivo theme.json es requerido para cada tema en Croogo. Este es requerido porque ahi se almacena informacion util como los menus y regiones que usa. De esta manera le permite a Croogo hacer peticiones a la base de datos y estar disponible sin romper el esquema MVC.</p>
+<p>El contenido de un ejemplo de theme.json puede ser encontrado en: <cite>app/View/Themed/MyTheme/webroot/theme.json</cite> y se muestra abajo</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">{</span>
+<span class="x">  &quot;name&quot; : &quot;Sample&quot;,</span>
+<span class="x">  &quot;description&quot; : &quot;Sample theme for Croogo&quot;,</span>
+<span class="x">  &quot;screenshot&quot; : &quot;screenshot.png&quot;,</span>
+
+<span class="x">  &quot;author&quot; : &quot;Author Name&quot;,</span>
+<span class="x">  &quot;authorEmail&quot; : &quot;author@email.com&quot;,</span>
+<span class="x">  &quot;authorUrl&quot; : &quot;http://authorswebsite.com&quot;,</span>
+
+<span class="x">  &quot;menus&quot; : [</span>
+<span class="x">    &quot;main&quot;,</span>
+<span class="x">    &quot;footer&quot;</span>
+<span class="x">    ],</span>
+
+<span class="x">  &quot;regions&quot; : [</span>
+<span class="x">    &quot;right&quot;</span>
+<span class="x">    ]</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>name: El nombre de la plantilla</li>
+<li>description: La descripcion de la plantilla</li>
+<li>screenshot: Una vista preliminar de tu plantilla, ubicada en <cite>app/View/Themed/MyTheme/webroot/img/screenshot.png</cite></li>
+<li>author: tu nombre</li>
+<li>authorEmail: tu email</li>
+<li>authorUrl: tu pagina web</li>
+<li>menus: una lista de menus que la plantilla usa</li>
+<li>regions: una lista de regiones que tu plantilla usa para mostrar bloques</li>
+<li>vocabularies (opcional): una lista de alias de vocabularios que tu plantilla usa.</li>
+</ul>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="basic-layout.html" title="Distribucion Basica" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="file-structure.html" title="Estructura de archivos" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

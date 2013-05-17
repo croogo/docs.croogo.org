@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sistema de repliegue &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Plantillas" href="../themes.html" />
+    <link rel="next" title="Empaquetado" href="packaging.html" />
+    <link rel="prev" title="Funciones de plantillas" href="theme-functions.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bienvenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Acerca de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Empezando con Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administradores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Dise?adores</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Plantillas</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Estructura de archivos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json-file.html">Archivo JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Distribucion Basica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Funciones de plantillas</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Sistema de repliegue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packaging.html">Empaquetado</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers.html">Desarrolladores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traductores</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="sistema-de-repliegue">
+<h1>Sistema de repliegue<a class="headerlink" href="#sistema-de-repliegue" title="Permalink to this headline">¶</a></h1>
+<p>Es completamente aceptable si no quieres crear todas y cada una de las vistas de tu plantilla. Por ejemplo, si <cite>app/View/Themed/MyTheme/Users/add.ctp</cite> no se encuentra, CakePHP intentara localizar  <cite>app/View/Users/add.ctp</cite>.</p>
+<div class="section" id="sistemas-de-repliegue-adicionales-para-nodos">
+<h2>Sistemas de repliegue adicionales para Nodos<a class="headerlink" href="#sistemas-de-repliegue-adicionales-para-nodos" title="Permalink to this headline">¶</a></h2>
+<p>En las plantillas, Croogo soporta distintos tipos de repliegues para nodos, y cualquier archivo de vista que encuentre primero es renderizado. Debajo hay una lista de 4 acciones para el Controlador NodesController donde se soportan las vistas adicionales.</p>
+<div class="section" id="index">
+<h3>index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><cite>app/View/Themed/MyTheme/Nodes/index_{tipo}.ctp</cite>: donde {type} es el alias del tipo de contenido. Por ejemplo &#8216;blog&#8217;</li>
+<li><cite>app/View/Themed/MyTheme/Nodes/index.ctp</cite></li>
+<li><cite>app/View/Nodes/index.ctp</cite></li>
+</ul>
+</div>
+<div class="section" id="search">
+<h3>search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><cite>app/View/Themed/MyTheme/Nodes/search_{tipo}.ctp</cite></li>
+<li><cite>app/View/Themed/MyTheme/Nodes/search.ctp</cite></li>
+<li><cite>app/View/Nodes/search.ctp</cite></li>
+</ul>
+</div>
+<div class="section" id="term">
+<h3>term<a class="headerlink" href="#term" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><cite>app/View/Themed/MyTheme/Nodes/term_{id}.ctp</cite>: donde {id} is el identificador del Termino</li>
+<li><cite>app/View/Themed/MyTheme/Nodes/term_{tipo}.ctp</cite></li>
+<li><cite>app/View/Themed/MyTheme/Nodes/term.ctp</cite></li>
+<li><cite>app/View/Nodes/term.ctp</cite></li>
+</ul>
+</div>
+<div class="section" id="view">
+<h3>view<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><cite>app/View/Themed/MyTheme/Nodes/view_{id}.ctp</cite>: donde {id} es el identificador del Nodo.</li>
+<li><cite>app/View/Themed/MyTheme/Nodes/view_{type}.ctp</cite></li>
+<li><cite>app/View/Themed/MyTheme/Nodes/view.ctp</cite></li>
+<li><cite>app/View/Nodes/view.ctp</cite></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="packaging.html" title="Empaquetado" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="theme-functions.html" title="Funciones de plantillas" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

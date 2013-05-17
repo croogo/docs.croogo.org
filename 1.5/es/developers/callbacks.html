@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Retrollamadas &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
+    <link rel="up" title="Desarrolladores" href="../developers.html" />
+    <link rel="next" title="Bloques de Vista" href="view-blocks.html" />
+    <link rel="prev" title="Auxiliares (helpers)" href="understanding-cakephp/helpers.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Bienvenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Acerca de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Empezando con Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administradores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designers.html">Dise?adores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Desarrolladores</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Trabajando con Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Entendiendo CakePHP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Retrollamadas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#componentes">Componentes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#helpers-auxiliares">Helpers (Auxiliares)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">Bloques de Vista</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Plugins del nucleo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells.html">Consolas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../translators.html">Traductores</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="retrollamadas">
+<h1>Retrollamadas<a class="headerlink" href="#retrollamadas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="componentes">
+<h2>Componentes<a class="headerlink" href="#componentes" title="Permalink to this headline">¶</a></h2>
+<p>Las siguientes retrollamadas son soportadas por componentes por CakePHP</p>
+<ul class="simple">
+<li>initialize: Llamada antes de Controller::beforeFilter()</li>
+<li>startup: Llamada despues de Controller::beforeFilter() y antes de la accion del controlador.</li>
+<li>beforeRender: Llamada despues de Controller::beforeRender(), despues de que la clase de vista es llamada y antes de Controller::render()</li>
+<li>shutdown: Llamada despues de Controller::render() y antes de que la salida sea impresa al navegador.</li>
+</ul>
+<div class="section" id="codigo">
+<h3>Codigo<a class="headerlink" href="#codigo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">ExampleComponent</span> <span class="k">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+
+    <span class="c1">//called before Controller::beforeFilter()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Controller</span><span class="p">,</span> <span class="nv">$settings</span> <span class="o">=</span> <span class="k">array</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// saving the controller reference for later use</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Controller</span> <span class="o">=&amp;</span> <span class="nv">$Controller</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//called after Controller::beforeFilter()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">startup</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Controller</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="c1">//called after Controller::beforeRender()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeRender</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Controller</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="c1">//called after Controller::render()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">shutdown</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Controller</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="c1">//called before Controller::redirect()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeRedirect</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$Controller</span><span class="p">,</span> <span class="nv">$url</span><span class="p">,</span> <span class="nv">$status</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$exit</span> <span class="o">=</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">redirectSomewhere</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// utilizing a controller method</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">controller</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Lee mas acerca de los componentes en <a class="reference external" href="http://book.cakephp.org/2.0/en/controllers/components.html">http://book.cakephp.org/2.0/en/controllers/components.html</a>.</p>
+</div>
+</div>
+<div class="section" id="helpers-auxiliares">
+<h2>Helpers (Auxiliares)<a class="headerlink" href="#helpers-auxiliares" title="Permalink to this headline">¶</a></h2>
+<p>Las siguientes retrollamadas son soportadas por Helpers por CakePHP:</p>
+<ul class="simple">
+<li>beforeRender: Llamada antes de que el archivo de vista sea reproducido.</li>
+<li>afterRender: Llamada despues que el archivo de vista es reproducido pero antes que la distribucion sea reproducida.</li>
+<li>beforeLayout: Llamada antes de que la distribucion sea reproducida.</li>
+<li>afterLayout: Llamada despues de que la distribucion es reproducida.</li>
+</ul>
+<p>Retrollamadas adicionales por Croogo para una mejor integracion.</p>
+<ul class="simple">
+<li>afterSetNode: Llamada despues de LayoutHelper::setNode(). Un buen lugar para modificar el contenido de los nodos.</li>
+<li>beforeNodeInfo: Llamada antes de LayoutHelper::nodeInfo().</li>
+<li>afterNodeInfo: Llamada despues de LayoutHelper::nodeInfo().</li>
+<li>beforeNodeBody: Llamada antes de  LayoutHelper::nodeBody().</li>
+<li>afterNodeBody: Llamada despues de LayoutHelper::nodeBody().</li>
+<li>beforeNodeMoreInfo: Llamada antes de LayoutHelper::nodeMoreInfo().</li>
+<li>afterNodeMoreInfo: Llamada despues de LayoutHelper::nodeMoreInfo()</li>
+</ul>
+<div class="section" id="id1">
+<h3>Codigo<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">ExampleHelper</span> <span class="k">extends</span> <span class="nx">AppHelper</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;Html&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Layout&#39;</span><span class="p">,</span>
+    <span class="p">);</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeRender</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterRender</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeLayout</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterLayout</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterSetNode</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// field values can be changed from hooks</span>
+        <span class="nv">$currentTitle</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">node</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+        <span class="nv">$modifiedTitle</span> <span class="o">=</span> <span class="nv">$currentTitle</span> <span class="o">.</span> <span class="s1">&#39; [Modified by ExampleHelper]&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">setNodeField</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nv">$modifiedTitle</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeNodeInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;beforeNodeInfo&lt;/p&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterNodeInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;afterNodeInfo&lt;/p&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeNodeBody</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;beforeNodeBody&lt;/p&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterNodeBody</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;afterNodeBody&lt;/p&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeNodeMoreInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;beforeNodeMoreInfo&lt;/p&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterNodeMoreInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;afterNodeMoreInfo&lt;/p&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Lee mas acerca de los helpers en <a class="reference external" href="http://book.cakephp.org/2.0/en/views/helpers.html">http://book.cakephp.org/2.0/en/views/helpers.html</a>.</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="view-blocks.html" title="Bloques de Vista" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="understanding-cakephp/helpers.html" title="Auxiliares (helpers)" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

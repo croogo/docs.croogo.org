@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Distribucion Basica &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Plantillas" href="../themes.html" />
+    <link rel="next" title="Funciones de plantillas" href="theme-functions.html" />
+    <link rel="prev" title="Archivo JSON" href="json-file.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bienvenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Acerca de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Empezando con Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administradores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Dise?adores</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Plantillas</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Estructura de archivos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json-file.html">Archivo JSON</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Distribucion Basica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Funciones de plantillas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Sistema de repliegue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packaging.html">Empaquetado</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers.html">Desarrolladores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traductores</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="distribucion-basica">
+<h1>Distribucion Basica<a class="headerlink" href="#distribucion-basica" title="Permalink to this headline">¶</a></h1>
+<p>Llamaremos a nuestra plantilla &#8220;MiTema&#8221;, asi que pondremos nuestra distribucion basica en:</p>
+<p><cite>/app/View/Themed/MiTema/Layouts/default.ctp</cite>.</p>
+<p>Al principio, podemos tener algo asi:</p>
+<blockquote>
+<div><p>&lt;!DOCTYPE html PUBLIC &#8220;-//W3C//DTD XHTML 1.0 Strict//EN&#8221; &#8220;<a class="reference external" href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</a>&#8220;&gt;
+&lt;html xmlns=&#8221;<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>&#8221; xml:lang=&#8221;en&#8221; lang=&#8221;en&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;head&gt;
+&lt;/head&gt;</p>
+<p>&lt;body&gt;
+&lt;/body&gt;</p>
+</div></blockquote>
+<p>&lt;/html&gt;</p>
+</div></blockquote>
+<div class="section" id="la-seccion-head">
+<h2>La seccion HEAD<a class="headerlink" href="#la-seccion-head" title="Permalink to this headline">¶</a></h2>
+<p>Aqui es donde el titulo de tu pagina, la informacion Meta, css y javascript son mostrados. Croogo tiene un LayoutHelper para hacer las cosas mas faciles para ti. Puedes usar tambien los helpers del nucleo de CakePHP para tareas mas generales.</p>
+<div class="section" id="titulo-de-pagina">
+<h3>Titulo de pagina<a class="headerlink" href="#titulo-de-pagina" title="Permalink to this headline">¶</a></h3>
+<p>La variable <cite>$title_for_layout</cite> es definida desde tu controlador (puede ser declarada en las vistas tambien). Y <cite>Configure::read(&#8216;Site.title&#8217;)</cite> es el titulo de tu pagina que puedes definir en el panel de administracion dentro de Configuraciones &gt; Sitio.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="etiquetas-meta">
+<h3>Etiquetas Meta<a class="headerlink" href="#etiquetas-meta" title="Permalink to this headline">¶</a></h3>
+<p>Esto se hace con una llamada simple al metodo del LayourHelper <cite>$this-&gt;Layout-&gt;meta()</cite>, este regresa todas las etiquetas meta de tu contenido.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fuentes-web">
+<h3>Fuentes web<a class="headerlink" href="#fuentes-web" title="Permalink to this headline">¶</a></h3>
+<p><cite>$this-&gt;Layout-&gt;feed()</cite> dara como salida una fuente RSS a tu contenido promovido</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">feed</span><span class="p">();</span>
+    <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css">
+<h3>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<p>Si tienes tus archivos CSS ubicados en <cite>/app/View/Themed/MyTheme/webroot/css/theme.css</cite>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">feed</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Html</span><span class="o">-&gt;</span><span class="na">css</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">));</span>
+    <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="javascript">
+<h3>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h3>
+<p>Croogo tiene un objeto Croogo en javascript que almacena informacion como la ruta base de la aplicacion, etc. Esto es util cuando tienes tareas relacionadas con Javascript para completar. Se puede lograr llamando al metodo <cite>$this-&gt;Layout-&gt;js()</cite>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">feed</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Html</span><span class="o">-&gt;</span><span class="na">css</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">));</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">js</span><span class="p">();</span>
+    <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/head&gt;</span>
+</pre></div>
+</div>
+<p>CakePHP permite cargar javascript desde tus vistas para que puedan ir directamente a HEAD. Para hacer esto necesitaras hacer echo a la variable <cite>$scripts_for_layout</cite>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">feed</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Html</span><span class="o">-&gt;</span><span class="na">css</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">));</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">js</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$scripts_for_layout</span><span class="p">;</span>
+    <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="la-etiqueta-body">
+<h2>La etiqueta BODY<a class="headerlink" href="#la-etiqueta-body" title="Permalink to this headline">¶</a></h2>
+<p>Aqui es donde vas a dar salida al contenido que es visible para el navegador.</p>
+<div class="section" id="contenido">
+<h3>Contenido<a class="headerlink" href="#contenido" title="Permalink to this headline">¶</a></h3>
+<p>La salida generada por tus vistas esta disponible en la varible <cite>$content_for_layout</cite>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;div id=&quot;content&quot;&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$content_for_layout</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="menu">
+<h3>Menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h3>
+<p>Si quieres mostrar un menu con el alias &#8216;main&#8217;, es tan simple como llamar a <cite>$this-&gt;Layout-&gt;menu(&#8216;main&#8217;)</cite>. Esto generara una lista anidada no ordenada de tu menu main:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;div id=&quot;nav&quot;&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">menu</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/div&gt;</span>
+
+<span class="x">    &lt;div id=&quot;content&quot;&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$content_for_layout</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bloques">
+<h3>Bloques<a class="headerlink" href="#bloques" title="Permalink to this headline">¶</a></h3>
+<p>Si quieres mostrar los bloques que le pertenecen a la region &#8216;derecha&#8217;, solo agrega <cite>$this-&gt;Layout-&gt;blocks(&#8216;derecha&#8217;)</cite>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;body&gt;</span>
+<span class="x">    &lt;div id=&quot;nav&quot;&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">menu</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/div&gt;</span>
+
+<span class="x">    &lt;div id=&quot;content&quot;&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$content_for_layout</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/div&gt;</span>
+
+<span class="x">    &lt;div id=&quot;sidebar&quot;&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">blocks</span><span class="p">(</span><span class="s1">&#39;derecha&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="codigo-final-de-default-ctp">
+<h2>Codigo final de default.ctp<a class="headerlink" href="#codigo-final-de-default-ctp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</span>
+<span class="x">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;</span>
+<span class="x">    &lt;head&gt;</span>
+<span class="x">        &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title_for_layout</span> <span class="o">.</span> <span class="s1">&#39; | &#39;</span> <span class="o">.</span> <span class="nx">Configure</span><span class="o">::</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;Site.title&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span>
+            <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">();</span>
+            <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">feed</span><span class="p">();</span>
+            <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Html</span><span class="o">-&gt;</span><span class="na">css</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">));</span>
+            <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">js</span><span class="p">();</span>
+            <span class="k">echo</span> <span class="nv">$scripts_for_layout</span><span class="p">;</span>
+        <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/head&gt;</span>
+
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        &lt;div id=&quot;nav&quot;&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">menu</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+
+<span class="x">        &lt;div id=&quot;content&quot;&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$content_for_layout</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+
+<span class="x">        &lt;div id=&quot;sidebar&quot;&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Layout</span><span class="o">-&gt;</span><span class="na">blocks</span><span class="p">(</span><span class="s1">&#39;derecha&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="theme-functions.html" title="Funciones de plantillas" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="json-file.html" title="Archivo JSON" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Traduccion &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Plugins del nucleo" href="../core-plugins.html" />
+    <link rel="next" title="Consolas" href="../shells.html" />
+    <link rel="prev" title="TinyMCE" href="tinymce.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bienvenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Acerca de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Empezando con Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administradores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Dise?adores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Desarrolladores</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Trabajando con Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Entendiendo CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Retrollamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Bloques de Vista</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Plugins del nucleo</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="wysiwyg.html">Wysiwyg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ckeditor.html">Ckeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tinymce.html">TinyMCE</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Traduccion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shells.html">Consolas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traductores</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="traduccion">
+<h1>Traduccion<a class="headerlink" href="#traduccion" title="Permalink to this headline">¶</a></h1>
+<p>El plugin de traduccion es uno de los plugins del nucleo que se envian con Croogo. Si tu sitio requiere el contenido en multiples lenguajes (i18n), solo activalo y empieza a traducir desde tu panel de administracion.</p>
+<p>Una vez activo, veras una link de Traducir en la columna de &#8216;Acciones&#8217;  donde los vinculos de Editar y Borrar estan presentes.</p>
+<p>Por defecto, puede traducir contenido para los siguientes modelos:</p>
+<ul class="simple">
+<li>Node</li>
+<li>Block</li>
+<li>Link</li>
+</ul>
+<div class="section" id="configuracion">
+<h2>Configuracion<a class="headerlink" href="#configuracion" title="Permalink to this headline">¶</a></h2>
+<p>La configuracion para esto est? en <cite>/app/Plugin/Translate/Config/bootstrap.php</cite> y es la siguiente</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Translate.models&#39;, array(</span>
+<span class="x">    &#39;Node&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;excerpt&#39; =&gt; &#39;excerptTranslation&#39;,</span>
+<span class="x">        &#39;body&#39; =&gt; &#39;bodyTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Block&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;body&#39; =&gt; &#39;bodyTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Link&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;description&#39; =&gt; &#39;descriptionTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<p>Ahora que si queremos que tus formularios de contacto sean traducidos tambien, entonces agrega el nombre del modelo de Contacto (Contact) en el bootstrap del plugin de la siguiente manera:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Translate.models&#39;, array(</span>
+<span class="x">    &#39;Node&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;excerpt&#39; =&gt; &#39;excerptTranslation&#39;,</span>
+<span class="x">        &#39;body&#39; =&gt; &#39;bodyTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Block&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;body&#39; =&gt; &#39;bodyTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Link&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;description&#39; =&gt; &#39;descriptionTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">    &#39;Contact&#39; =&gt; array(</span>
+<span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
+<span class="x">        &#39;body&#39; =&gt; &#39;bodyTranslation&#39;,</span>
+<span class="x">    ),</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="../shells.html" title="Consolas" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="tinymce.html" title="TinyMCE" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>
