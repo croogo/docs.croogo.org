@@ -116,19 +116,54 @@
 <dt>Para un menu con alias de &#8216;principal&#8217;</dt>
 <dd>[menu:principal] o [m:principal]</dd>
 </dl>
+<p>Avanzado</p>
+<p><tt class="docutils literal"><span class="pre">Estas</span> <span class="pre">opciones</span> <span class="pre">podrian</span> <span class="pre">cambiar</span> <span class="pre">drasticamente</span> <span class="pre">el</span> <span class="pre">funcionamiento</span> <span class="pre">de</span> <span class="pre">su</span> <span class="pre">sitio,</span> <span class="pre">manejese</span> <span class="pre">con</span> <span class="pre">cuidado</span></tt></p>
+<p>Variables soportadas:</p>
+<ul class="simple">
+<li>tag=&#8221;htmlTag&#8221; : Envuelve el menu en una etiqueta htmlTag</li>
+<li>tagAttributes=&#8221;className&#8221; : nombre de clase para la etiqueta envolvente</li>
+<li>selected=&#8221;selected&#8221; : clase para el elemento seleccionado</li>
+<li>dropdown=&#8221;false&#8221; : Menu desplegable</li>
+<li>dropdownClass=&#8221;sf-menu&#8221; : Clase para menus desplegables</li>
+<li>element=&#8221;Menus.menu&#8221; : Elemento para usar como plantilla</li>
+</ul>
 </div>
 <div class="section" id="vocabulario">
 <h3>Vocabulario<a class="headerlink" href="#vocabulario" title="Permalink to this headline">¶</a></h3>
 <p>Para un vocabulario con alias de &#8216;categorias&#8217;:</p>
 <blockquote>
 <div>[vocabulary:categorias] OR [v:categorias]</div></blockquote>
+<p>Avanzado</p>
+<p><tt class="docutils literal"><span class="pre">Estas</span> <span class="pre">opciones</span> <span class="pre">podrian</span> <span class="pre">cambiar</span> <span class="pre">drasticamente</span> <span class="pre">el</span> <span class="pre">funcionamiento</span> <span class="pre">de</span> <span class="pre">su</span> <span class="pre">sitio,</span> <span class="pre">manejese</span> <span class="pre">con</span> <span class="pre">cuidado</span></tt></p>
+<p>Variables soportadas :</p>
+<ul class="simple">
+<li>link=&#8221;true&#8221; : Crea un link para cada vocabulario encontrado usando los parametros establecidos de plugin, controlador, accion and tipo de nodo.</li>
+<li>plugin=&#8221;nameOfPlugin&#8221; : nombre de plugin usado para crear link</li>
+<li>controller=&#8221;controller&#8221; : nombre de controlador usado para crear link</li>
+<li>action=&#8221;action&#8221; : nombre de accion usado para crear link</li>
+<li>type=&#8221;type&#8221; : tipo de nodo usado para crear link</li>
+<li>tag=&#8221;htmlTag&#8221; : etiqueta htmlTag para envolver el contenido generado</li>
+<li>tagAttributes=&#8221;className&#8221; : nombre de clase de la etiqueta envolvente</li>
+<li>element=&#8221;Taxonomy.vocabulary&#8221; : Elemento para usar como plantilla</li>
+</ul>
 </div>
 <div class="section" id="nodos">
 <h3>Nodos<a class="headerlink" href="#nodos" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>Por ejemplo, si quieres mostrar una lista de los 5 nodos mas recientes como un bloque:</dt>
-<dd>[node:recent_posts conditions=&#8221;Node.type:blog;Node.status:1&#8221; order=&#8221;Node.id DESC&#8221; limit=&#8221;5&#8221;]</dd>
-</dl>
+<p>Por ejemplo, si quieres mostrar una lista de los 5 nodos mas recientes como un bloque:</p>
+<blockquote>
+<div>[node:recent_posts conditions=&#8221;Node.type:blog;Node.status:1&#8221; order=&#8221;Node.id DESC&#8221; limit=&#8221;5&#8221;]</div></blockquote>
+<p>Avanzado</p>
+<p><tt class="docutils literal"><span class="pre">Estas</span> <span class="pre">opciones</span> <span class="pre">podrian</span> <span class="pre">cambiar</span> <span class="pre">drasticamente</span> <span class="pre">el</span> <span class="pre">funcionamiento</span> <span class="pre">de</span> <span class="pre">su</span> <span class="pre">sitio,</span> <span class="pre">manejese</span> <span class="pre">con</span> <span class="pre">cuidado</span></tt></p>
+<p>Variables soportadas :</p>
+<blockquote>
+<div><ul class="simple">
+<li>link=&#8221;true&#8221; : Crea un link para cada nodo encontrado usando los parametros de url proporcionados</li>
+<li>plugin=&#8221;nameOfPlugin&#8221; : nombre de plugin usado para crear link</li>
+<li>controller=&#8221;controller&#8221; : nombre de controlador usado para crear link</li>
+<li>action=&#8221;action&#8221; : nombre de accion usado para crear link</li>
+<li>element=&#8221;Nodes.node_list&#8221; : Elemento para usar como plantilla</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 </div>

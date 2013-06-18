@@ -114,18 +114,52 @@
 <p>For a Menu with alias main:</p>
 <blockquote>
 <div>[menu:main] OR [m:main]</div></blockquote>
+<p>Advanced</p>
+<p><tt class="docutils literal"><span class="pre">This</span> <span class="pre">options</span> <span class="pre">could</span> <span class="pre">drastically</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">way</span> <span class="pre">your</span> <span class="pre">website</span> <span class="pre">works,</span> <span class="pre">handle</span> <span class="pre">with</span> <span class="pre">caution</span></tt></p>
+<p>Variables supported:</p>
+<ul class="simple">
+<li>tag=&#8221;htmlTag&#8221; : tag to wrap content output</li>
+<li>tagAttributes=&#8221;className&#8221; : class name for wrapping tag</li>
+<li>selected=&#8221;selected&#8221; : class for the selected element</li>
+<li>dropdown=&#8221;false&#8221; : Dropdown menu</li>
+<li>dropdownClass=&#8221;sf-menu&#8221; : Class for dropdown menus</li>
+<li>element=&#8221;Menus.menu&#8221; : Element to use as template</li>
+</ul>
 </div>
 <div class="section" id="vocabulary">
 <h3>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h3>
 <p>For a Vocabulary with alias categories:</p>
 <blockquote>
 <div>[vocabulary:categories] OR [v:categories]</div></blockquote>
+<p>Advanced</p>
+<p><tt class="docutils literal"><span class="pre">This</span> <span class="pre">options</span> <span class="pre">could</span> <span class="pre">drastically</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">way</span> <span class="pre">your</span> <span class="pre">website</span> <span class="pre">works,</span> <span class="pre">handle</span> <span class="pre">with</span> <span class="pre">caution</span></tt></p>
+<p>Variables supported :</p>
+<ul class="simple">
+<li>link=&#8221;true&#8221; : if true, it creates a link for each vocabulary found, it will create the link using the supplied arguments for plugin, controller, action and type.</li>
+<li>plugin=&#8221;nameOfPlugin&#8221; : plugin name supplied to create link</li>
+<li>controller=&#8221;controller&#8221; : controller name supplied to create link</li>
+<li>action=&#8221;action&#8221; : action name supplied to create link</li>
+<li>type=&#8221;type&#8221; : type of node supplied to create link</li>
+<li>tag=&#8221;htmlTag&#8221; : tag to wrap content output</li>
+<li>tagAttributes=&#8221;className&#8221; : className for wrapping tag</li>
+<li>element=&#8221;Taxonomy.vocabulary&#8221; : Element to use as template</li>
+</ul>
 </div>
 <div class="section" id="nodes">
 <h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
 <p>For example, you want to show a list of 5 most recent blog posts as a block:</p>
 <blockquote>
 <div>[node:recent_posts conditions=&#8221;Node.type:blog;Node.status:1&#8221; order=&#8221;Node.id DESC&#8221; limit=&#8221;5&#8221;]</div></blockquote>
+<p>Advanced</p>
+<p><tt class="docutils literal"><span class="pre">This</span> <span class="pre">options</span> <span class="pre">could</span> <span class="pre">drastically</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">way</span> <span class="pre">your</span> <span class="pre">website</span> <span class="pre">works,</span> <span class="pre">handle</span> <span class="pre">with</span> <span class="pre">caution</span></tt></p>
+<p>Variables supported :</p>
+<ul class="simple">
+<li>link=&#8221;true&#8221; : if true, it creates a link for each node found, it will create the link using the supplied arguments for plugin, controller, action and type.</li>
+<li>plugin=&#8221;nodes&#8221; : plugin name supplied to create link</li>
+<li>controller=&#8221;nodes&#8221; : controller name supplied to create link</li>
+<li>action=&#8221;view&#8221; : action name supplied to create link</li>
+<li>element=&#8221;Nodes.node_list&#8221; : Element to use as template</li>
+</ul>
 </div>
 </div>
 </div>
