@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Shells &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
+    <link rel="up" title="Développeurs" href="../developers.html" />
+    <link rel="next" title="Tips" href="tips.html" />
+    <link rel="prev" title="Translate" href="core-plugins/translate.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Bienvenue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">A propos de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Développeurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Working with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="callbacks.html">Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Shells</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-shell">Install Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ext-shell">Ext Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings-shell">Settings Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#users-shell">Users Shell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../translators.html">Traducteurs</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="shells">
+<h1>Shells<a class="headerlink" href="#shells" title="Permalink to this headline">¶</a></h1>
+<p>Croogo now has the ability to install and activate extensions from the command line. To access the shells cd in your <cite>app</cite> folder and run the commands using: <cite>./Console/cake [shell]</cite>.</p>
+<div class="section" id="install-shell">
+<h2>Install Shell<a class="headerlink" href="#install-shell" title="Permalink to this headline">¶</a></h2>
+<p>Most extensions you&#8217;ll find on Github.com. To install the megamenu plugin extension from github type:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install plugin https://github.com/rchavik/megamenu</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install plugin rchavik megamenu</span>
+</pre></div>
+</div>
+<p>Themes can also be installed the same way:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install theme https://github.com/fahad19/themes</span>
+</pre></div>
+</div>
+<p>If you have a zip file located somewhere else, type:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install theme http://example.com/mytheme.zip</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ext-shell">
+<h2>Ext Shell<a class="headerlink" href="#ext-shell" title="Permalink to this headline">¶</a></h2>
+<p>You can activate/deactivate plugins and themes from the console. To activate the Megamenu extension previously installed:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake ext activate plugin Megamenu</span>
+</pre></div>
+</div>
+<p>To deactivate:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake ext deactivate plugin Megamenu</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="settings-shell">
+<h2>Settings Shell<a class="headerlink" href="#settings-shell" title="Permalink to this headline">¶</a></h2>
+<p>The Settings plugin provides a few utility command to manipulate configuration values:</p>
+<ul>
+<li><p class="first">Reading a configuration:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings read Site.title</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Writing a configuration value:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings write Site.title &quot;My Awesome Site&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Deleting a configuration value:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings delete Custom.settingValue</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Updating version information after an upgrade:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings upgrade_version_info</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="users-shell">
+<h2>Users Shell<a class="headerlink" href="#users-shell" title="Permalink to this headline">¶</a></h2>
+<p>You can reset a user&#8217;s password from the shell:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake users.users reset admin password</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="tips.html" title="Tips" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="core-plugins/translate.html" title="Translate" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+        <span class="separator">|</span>
+        <a href="/1.5/en/">EN</a>
+        <a href="/1.5/es/">ES</a>
+	<a href="/1.5/fr/">FR</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>

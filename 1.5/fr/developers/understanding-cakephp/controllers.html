@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Controllers &mdash; Croogo Docs v1.5.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/960.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.5.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
+    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="next" title="Components" href="components.html" />
+    <link rel="prev" title="Understanding CakePHP" href="../understanding-cakephp.html" /> 
+  </head>
+  <body>
+<div id="header">
+  <div class="container_12">
+    <div class="grid_6">
+      <a class="logo" href="http://croogo.org"> </a>
+    </div>
+
+    <div class="grid_6">
+      <ul id="nav">
+        <li><a href="http://docs.croogo.org">Documentation</a></li>
+        <li><a href="http://blog.croogo.org">Blog</a></li>
+        <li><a href="http://github.com/croogo/croogo">Source</a></li>
+        <li><a href="http://croogo.lighthouseapp.com/">Issues</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Discuss</a></li>
+        <li><a href="http://downloads.croogo.org">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div class="container_12">
+    <div class="grid_3">
+      <div id="sidebar">
+<h3><a href="../../contents.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Bienvenue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">A propos de Croogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="behaviors.html">Behaviors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="behaviors.html#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpers.html">Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="grid_9">
+      <div id="content">
+        
+  <div class="section" id="controllers">
+<h1>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h1>
+<p>Read the CakePHP docs on Controllers: <a class="reference external" href="http://book.cakephp.org/2.0/en/controllers.html">http://book.cakephp.org/2.0/en/controllers.html</a>.</p>
+<div class="section" id="what-is-a-controller">
+<h2>What is a Controller?<a class="headerlink" href="#what-is-a-controller" title="Permalink to this headline">¶</a></h2>
+<p>A controller is used to manage the logic for a part of your application. Most commonly, controllers are used to manage the logic for a single model. For example, if you were building a site for an online bakery, you might have a RecipesController and a IngredientsController managing your recipes and their ingredients. In CakePHP, controllers are named after the model they handle, in plural form.</p>
+<p>The Recipe model is handled by the RecipesController, the Product model is handled by the ProductsController, and so on.</p>
+<p>Your application&#8217;s controllers are classes that extend the CakePHP AppController class, which in turn extends a core Controller class, which are part of the CakePHP library. The AppController class can be defined in <cite>/app/Controller/AppController.php</cite> and it should contain methods that are shared between all of your application’s controllers.</p>
+<p>Controllers can include any number of methods which are usually referred to as actions. Actions are controller methods used to display views. An action is a single method of a controller.</p>
+<p>CakePHP&#8217;s dispatcher calls actions when an incoming request matches a URL to a controller’s action (refer to &#8220;Routes Configuration&#8221; for an explanation on how controller actions and parameters are mapped from the URL).</p>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>Returning to our online bakery example, our RecipesController might contain the view(), share(), and search() actions. The controller would be found in /app/Controller/RecipesController.php:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">RecipesController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>     <span class="p">{</span>
+        <span class="c1">//action logic goes here..</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">share</span><span class="p">(</span><span class="nv">$customer_id</span><span class="p">,</span> <span class="nv">$recipe_id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//action logic goes here..</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">search</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//action logic goes here..</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="plugin-controllers">
+<h3>Plugin Controllers<a class="headerlink" href="#plugin-controllers" title="Permalink to this headline">¶</a></h3>
+<p>If it is Recipes plugin&#8217;s controller, it would be found at <cite>/app/Plugin/Recipe/Controller/RecipesController.php</cite>.</p>
+</div>
+</div>
+<div class="section" id="how-to-see-it-in-action">
+<h2>How to see it in action?<a class="headerlink" href="#how-to-see-it-in-action" title="Permalink to this headline">¶</a></h2>
+<p>Controllers can be accessed from your browser from the address yoursite.com/controller_name/action_name. But it will show errors now, and we will require to create models and views for it too.</p>
+</div>
+</div>
+
+
+      </div>
+
+      <div class="prevnext">
+        
+  <ul>
+    <li>
+      <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+    </li>
+    <li>
+      <a href="components.html" title="Components" accesskey="N">next</a>
+    </li>
+    <li>
+      <a href="../understanding-cakephp.html" title="Understanding CakePHP" accesskey="P">previous</a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container_12">
+    <div class="grid_6">
+      <div id="links">
+        <a href="https://github.com/croogo?tab=members">Team</a>
+        <a href="https://github.com/croogo/croogo/blob/master/LICENSE.txt">License</a>
+      </div>
+    </div>
+
+    <div class="grid_6">
+      <div id="connect">
+        <a href="http://twitter.com/croogo">Twitter</a>
+        <a href="https://plus.google.com/u/0/communities/103533171506392970953">Google+</a>
+        <a href="https://groups.google.com/forum/?fromgroups#!forum/croogo">Groups</a>
+        <a href="http://github.com/croogo">GitHub</a>
+        <a href="http://webchat.freenode.net/?channel=croogo">IRC</a>
+        <span class="separator">|</span>
+        <a href="/1.5/en/">EN</a>
+        <a href="/1.5/es/">ES</a>
+	<a href="/1.5/fr/">FR</a>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+  </body>
+</html>
