@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Theme functions &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Fonctions de thème &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
@@ -25,9 +25,9 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Themes" href="../themes.html" />
-    <link rel="next" title="Fallback system" href="fallback-system.html" />
-    <link rel="prev" title="Basic layout" href="basic-layout.html" /> 
+    <link rel="up" title="Thèmes" href="../themes.html" />
+    <link rel="next" title="Solutions de secours supplémentaires pour les nœuds" href="fallback-system.html" />
+    <link rel="prev" title="Layout de base" href="basic-layout.html" /> 
   </head>
   <body>
 <div id="header">
@@ -62,12 +62,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Pour commencer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Designers</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Themes</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="file-structure.html">File structure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Thèmes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Structure de fichier</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json-file.html">JSON file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Basic layout</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Theme functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Fallback system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Layout de base</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Fonctions de thème</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Solutions de secours supplémentaires pour les nœuds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="packaging.html">Packaging</a></li>
 </ul>
 </li>
@@ -83,21 +83,27 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="theme-functions">
-<h1>Theme functions<a class="headerlink" href="#theme-functions" title="Permalink to this headline">¶</a></h1>
-<p>All theme specific functions (if you need any) go to CustomHelper. If your theme alias is MyTheme, your CustomHelper should be placed in <cite>app/View/Themed/MyTheme/Helper/CustomHelper.php</cite>.</p>
+  <div class="section" id="fonctions-de-theme">
+<h1>Fonctions de thème<a class="headerlink" href="#fonctions-de-theme" title="Permalink to this headline">¶</a></h1>
+<p>Toutes les fonctions de thème sont des fonctions spécifiques (si vous en avez
+besoin) se trouvant dans CustomHelper. Si l&#8217;alias de votre thème est MyTheme,
+votre CustomHelper devra être placé dans
+<cite>app/View/Themed/MyTheme/Helper/CustomHelper.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">CustomHelper</span> <span class="k">extends</span> <span class="nx">Helper</span> <span class="p">{</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">myCustomMethod</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// code here</span>
+        <span class="c1">// code ici</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
-<p>CustomHelper is automatically loaded, so you can use it like this your views (.ctp files):</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">$this-&gt;Custom-&gt;myCustomMethod();</span>
+<p>CustomHelper est automatiquement chargé, ainsi vous pouvez l&#8217;utiliser comme
+ceci dans vos vues (.ctp files):</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Custom</span><span class="o">-&gt;</span><span class="na">myCustomMethod</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -112,10 +118,10 @@
       <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
     </li>
     <li>
-      <a href="fallback-system.html" title="Fallback system" accesskey="N">next</a>
+      <a href="fallback-system.html" title="Solutions de secours supplémentaires pour les nœuds" accesskey="N">next</a>
     </li>
     <li>
-      <a href="basic-layout.html" title="Basic layout" accesskey="P">previous</a>
+      <a href="basic-layout.html" title="Layout de base" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

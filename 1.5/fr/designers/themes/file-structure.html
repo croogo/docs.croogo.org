@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>File structure &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Structure de fichier &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
@@ -25,9 +25,9 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Themes" href="../themes.html" />
+    <link rel="up" title="Thèmes" href="../themes.html" />
     <link rel="next" title="JSON file" href="json-file.html" />
-    <link rel="prev" title="Themes" href="../themes.html" /> 
+    <link rel="prev" title="Thèmes" href="../themes.html" /> 
   </head>
   <body>
 <div id="header">
@@ -62,12 +62,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Pour commencer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Designers</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Themes</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">File structure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Thèmes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Structure de fichier</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json-file.html">JSON file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Basic layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Theme functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Fallback system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Layout de base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Fonctions de thème</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Solutions de secours supplémentaires pour les nœuds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="packaging.html">Packaging</a></li>
 </ul>
 </li>
@@ -83,13 +83,16 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="file-structure">
-<h1>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h1>
-<p>A theme is identified by it&#8217;s unique alias. If you have your theme under the directory <cite>app/View/Themed/MyTheme</cite>, then your theme&#8217;s alias is MyTheme.</p>
-<p>A <cite>theme.json</cite> file is also required. You can see the JSON file used for the default theme here: <a class="reference external" href="http://github.com/croogo/croogo/blob/1.4/webroot/theme.json">theme.json</a>.</p>
+  <div class="section" id="structure-de-fichier">
+<h1>Structure de fichier<a class="headerlink" href="#structure-de-fichier" title="Permalink to this headline">¶</a></h1>
+<p>Un thème est identifié par son alias unique. Si vous avez votre thème dans le
+répertoire <cite>app/View/Themed/MyTheme</cite>, alors l&#8217;alias de votre thème est MyTheme.</p>
+<p>Un fichier <cite>theme.json</cite> est aussi nécessaire. Vous pouvez utiliser le fichier
+JSON utilisé pour le thème par défaut ici: <a class="reference external" href="http://github.com/croogo/croogo/blob/1.4/webroot/theme.json">theme.json</a>.</p>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
-<p>For example, you have a theme with alias MyTheme. All your files should be placed like this:</p>
+<p>Par exemple, vous avez un thème avec l&#8217;alias MyTheme. Tous les fichiers doivent
+être placés comme ceci:</p>
 <ul>
 <li><p class="first">app/View/Themed/MyTheme/
 - Elements/
@@ -126,7 +129,8 @@
 </ul>
 </li>
 </ul>
-<p>Do not forget the theme.json file. Your theme will not be available in the admin panel otherwise.</p>
+<p>N&#8217;oubliez pas le fichier theme.json. Votre thème ne sera pas disponible dans
+le panneau admin sinon.</p>
 </div>
 </div>
 
@@ -143,7 +147,7 @@
       <a href="json-file.html" title="JSON file" accesskey="N">next</a>
     </li>
     <li>
-      <a href="../themes.html" title="Themes" accesskey="P">previous</a>
+      <a href="../themes.html" title="Thèmes" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

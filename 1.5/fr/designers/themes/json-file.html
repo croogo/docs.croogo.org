@@ -25,9 +25,9 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Themes" href="../themes.html" />
-    <link rel="next" title="Basic layout" href="basic-layout.html" />
-    <link rel="prev" title="File structure" href="file-structure.html" /> 
+    <link rel="up" title="Thèmes" href="../themes.html" />
+    <link rel="next" title="Layout de base" href="basic-layout.html" />
+    <link rel="prev" title="Structure de fichier" href="file-structure.html" /> 
   </head>
   <body>
 <div id="header">
@@ -62,12 +62,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Pour commencer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Designers</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Themes</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="file-structure.html">File structure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Thèmes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Structure de fichier</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">JSON file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Basic layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Theme functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Fallback system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Layout de base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Fonctions de thème</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fallback-system.html">Solutions de secours supplémentaires pour les nœuds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="packaging.html">Packaging</a></li>
 </ul>
 </li>
@@ -85,8 +85,13 @@
         
   <div class="section" id="json-file">
 <h1>JSON file<a class="headerlink" href="#json-file" title="Permalink to this headline">¶</a></h1>
-<p>A theme.json file is required for every theme in Croogo. This is required because themes can store useful information like menus and regions it uses, and this way it allows Croogo to query the database and make these information available to the theme without breaking MVC.</p>
-<p>Content of an example theme.json file found at <cite>app/View/Themed/MyTheme/webroot/theme.json</cite> is shown below:</p>
+<p>Un fichier theme.json est nécessaire pour chaque thème dans Croogo. C&#8217;est
+nécessaire parce que les thèmes peuvent stocker des informations utiles comme
+les menus et les regions qu&#8217;il utilise, et de cette façon, il permet à Croogo
+de rechercher la base de données et de rendre ces informations disponibles
+pour le thème sans casser MVC.</p>
+<p>Le contenu d&#8217;un fichier d&#8217;exemple theme.json file se trouvant dans
+<cite>app/View/Themed/MyTheme/webroot/theme.json</cite> est montré ci-dessous:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">{</span>
 <span class="x">  &quot;name&quot; : &quot;Sample&quot;,</span>
 <span class="x">  &quot;description&quot; : &quot;Sample theme for Croogo&quot;,</span>
@@ -108,15 +113,15 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>name: your theme&#8217;s name</li>
-<li>description: your theme&#8217;s description</li>
-<li>screenshot: a small preview of your theme placed under <cite>app/View/Themed/MyTheme/webroot/img/screenshot.png</cite></li>
-<li>author: your name</li>
-<li>authorEmail: your email</li>
-<li>authorUrl: your website</li>
-<li>menus: a list of menu aliases that the theme uses</li>
-<li>regions: a list of regions that the theme uses for showing blocks</li>
-<li>vocabularies (optional): a list of vocabulary aliases that the theme uses</li>
+<li>name: le nom de votre thème</li>
+<li>description: la description de votre thème</li>
+<li>screenshot: Une petite preview de votre thème placée dans <cite>app/View/Themed/MyTheme/webroot/img/screenshot.png</cite></li>
+<li>author: votre nom</li>
+<li>authorEmail: votre email</li>
+<li>authorUrl: votre site internet</li>
+<li>menus: une liste d&#8217;alias de de menu que le thème utilise</li>
+<li>regions: une liste de regions que le thème utilise pour montrer les blocks</li>
+<li>vocabularies (optionel): une liste d&#8217;alias de vocabulaires que le thème utilise</li>
 </ul>
 </div>
 
@@ -130,10 +135,10 @@
       <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
     </li>
     <li>
-      <a href="basic-layout.html" title="Basic layout" accesskey="N">next</a>
+      <a href="basic-layout.html" title="Layout de base" accesskey="N">next</a>
     </li>
     <li>
-      <a href="file-structure.html" title="File structure" accesskey="P">previous</a>
+      <a href="file-structure.html" title="Structure de fichier" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

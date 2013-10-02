@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Fallback system &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Solutions de secours supplémentaires pour les nœuds &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
@@ -25,9 +25,9 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Themes" href="../themes.html" />
+    <link rel="up" title="Thèmes" href="../themes.html" />
     <link rel="next" title="Packaging" href="packaging.html" />
-    <link rel="prev" title="Theme functions" href="theme-functions.html" /> 
+    <link rel="prev" title="Fonctions de thème" href="theme-functions.html" /> 
   </head>
   <body>
 <div id="header">
@@ -62,12 +62,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Pour commencer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../designers.html">Designers</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Themes</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="file-structure.html">File structure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../themes.html">Thèmes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Structure de fichier</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json-file.html">JSON file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Basic layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Theme functions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Fallback system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic-layout.html">Layout de base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="theme-functions.html">Fonctions de thème</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Solutions de secours supplémentaires pour les nœuds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="packaging.html">Packaging</a></li>
 </ul>
 </li>
@@ -83,22 +83,27 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="fallback-system">
-<h1>Fallback system<a class="headerlink" href="#fallback-system" title="Permalink to this headline">¶</a></h1>
-<p>It is absolutely fine if you do not want to create each and every view file for your theme. For example, if <cite>app/View/Themed/MyTheme/Users/add.ctp</cite> is not found, CakePHP will try to locate <cite>app/View/Users/add.ctp</cite>.</p>
-<div class="section" id="extra-fallbacks-for-nodes">
-<h2>Extra fallbacks for Nodes<a class="headerlink" href="#extra-fallbacks-for-nodes" title="Permalink to this headline">¶</a></h2>
-<p>For theming, Croogo supports a few extra fallbacks for nodes, and whichever view file found first is rendered. Below are the lists of four actions of NodesController supporting extra view fallbacks:</p>
+  <p>Système de secours
+##################s</p>
+<p>C&#8217;est absolument ok si vous ne voulez pas créer chacun des fichiers de vue pour
+votre thème. Par exemple, si <cite>app/View/Themed/MyTheme/Users/add.ctp</cite> n&#8217;est pas
+trouvé, CakePHP va essayer de localiser <cite>app/View/Users/add.ctp</cite>.</p>
+<div class="section" id="solutions-de-secours-supplementaires-pour-les-noeuds">
+<h1>Solutions de secours supplémentaires pour les nœuds<a class="headerlink" href="#solutions-de-secours-supplementaires-pour-les-noeuds" title="Permalink to this headline">¶</a></h1>
+<p>Pour les thèmes, Croogo supporte quelques solutions de secours supplémentaires
+pour les nœuds, et quel fichier de vue trouvé le premier est rendu. Ci-dessous,
+les listes de quatre actions de NodesController supportant les systèmes de vue
+suppléementaires:</p>
 <div class="section" id="index">
-<h3>index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<h2>index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><cite>app/View/Themed/MyTheme/Nodes/index_{type}.ctp</cite>: where {type} is the alias of your content type, for e.g. &#8216;blog&#8217;</li>
+<li><cite>app/View/Themed/MyTheme/Nodes/index_{type}.ctp</cite>: où {type} est l&#8217;alias de votre type de contenu, par ex &#8216;blog&#8217;</li>
 <li><cite>app/View/Themed/MyTheme/Nodes/index.ctp</cite></li>
 <li><cite>app/View/Nodes/index.ctp</cite></li>
 </ul>
 </div>
 <div class="section" id="search">
-<h3>search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+<h2>search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><cite>app/View/Themed/MyTheme/Nodes/search_{type}.ctp</cite></li>
 <li><cite>app/View/Themed/MyTheme/Nodes/search.ctp</cite></li>
@@ -106,23 +111,22 @@
 </ul>
 </div>
 <div class="section" id="term">
-<h3>term<a class="headerlink" href="#term" title="Permalink to this headline">¶</a></h3>
+<h2>term<a class="headerlink" href="#term" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><cite>app/View/Themed/MyTheme/Nodes/term_{id}.ctp</cite>: where {id} is Term ID</li>
+<li><cite>app/View/Themed/MyTheme/Nodes/term_{id}.ctp</cite>: où {id} est l&#8217;ID de Term</li>
 <li><cite>app/View/Themed/MyTheme/Nodes/term_{type}.ctp</cite></li>
 <li><cite>app/View/Themed/MyTheme/Nodes/term.ctp</cite></li>
 <li><cite>app/View/Nodes/term.ctp</cite></li>
 </ul>
 </div>
 <div class="section" id="view">
-<h3>view<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h3>
+<h2>view<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><cite>app/View/Themed/MyTheme/Nodes/view_{id}.ctp</cite>: where {id} is Node ID</li>
+<li><cite>app/View/Themed/MyTheme/Nodes/view_{id}.ctp</cite>: où {id} est l&#8217;ID du Noeud</li>
 <li><cite>app/View/Themed/MyTheme/Nodes/view_{type}.ctp</cite></li>
 <li><cite>app/View/Themed/MyTheme/Nodes/view.ctp</cite></li>
 <li><cite>app/View/Nodes/view.ctp</cite></li>
 </ul>
-</div>
 </div>
 </div>
 
@@ -139,7 +143,7 @@
       <a href="packaging.html" title="Packaging" accesskey="N">next</a>
     </li>
     <li>
-      <a href="theme-functions.html" title="Theme functions" accesskey="P">previous</a>
+      <a href="theme-functions.html" title="Fonctions de thème" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

@@ -85,7 +85,7 @@
         
   <div class="section" id="theme-functions">
 <h1>Theme functions<a class="headerlink" href="#theme-functions" title="Permalink to this headline">¶</a></h1>
-<p>All theme specific functions (if you need any) go to CustomHelper. If your theme alias is MyTheme, your CustomHelper should be placed in <cite>app/View/Themed/MyTheme/Helper/CustomHelper.php</cite>.</p>
+<p>All theme specific functions (if you need any) go to CustomHelper. If your theme alias is MyTheme, your CustomHelper should be placed in <cite>app/View/Themed/MyTheme/Helper/CustomHelper.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">CustomHelper</span> <span class="k">extends</span> <span class="nx">Helper</span> <span class="p">{</span>
 
@@ -94,10 +94,12 @@
     <span class="p">}</span>
 
 <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 <p>CustomHelper is automatically loaded, so you can use it like this your views (.ctp files):</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">$this-&gt;Custom-&gt;myCustomMethod();</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Custom</span><span class="o">-&gt;</span><span class="na">myCustomMethod</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
