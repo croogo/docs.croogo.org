@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Content types &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Types de Contenu &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
@@ -62,12 +62,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Pour commencer</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../administrators.html">Administrateurs</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../content.html">Content</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Content types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Types de Contenu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametres">Paramètres</a></li>
 <li class="toctree-l3"><a class="reference internal" href="taxonomy.html">Taxonomy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="custom-fields.html">Custom fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="meta-tags.html">Meta tags</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multilingual.html">Multilingual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom-fields.html">Champs personnalisés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-tags.html">Balises Meta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multilingual.html">Multilingue</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
@@ -75,8 +75,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../media.html">Media</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contacts.html">Contacts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users.html">Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users.html">Users (Utilisateurs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Paramètres</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
@@ -90,28 +90,35 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="content-types">
-<h1>Content types<a class="headerlink" href="#content-types" title="Permalink to this headline">¶</a></h1>
-<p>By default, there are three content types:</p>
+  <div class="section" id="types-de-contenu">
+<h1>Types de Contenu<a class="headerlink" href="#types-de-contenu" title="Permalink to this headline">¶</a></h1>
+<p>Par défaut, il y a trois types de contenu:</p>
 <ul class="simple">
-<li>Page: for pages</li>
-<li>Blog: for blog posts</li>
-<li>Node: unless you are sure of what content type to use</li>
+<li>Page: pour les pages</li>
+<li>Blog: pour les posts de blog</li>
+<li>Node: A moins que vous soyez sur du type de contenu à utiliser</li>
 </ul>
-<p>If you think you require a new content type, you are able to create one from admin panel.</p>
+<p>Si vous pensez que vous avez besoin d&#8217;un nouveau type de contenu, vous êtes
+capable d&#8217;en créer un à partir du panneau admin.</p>
 </div>
-<div class="section" id="parameters">
-<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
-<p>When you add or edit content types, you will notice a &#8216;Params&#8217; field where you can enter parameters. It is expected that one parameter is entered per line with a key/value pair using equal sign as a separator. Example below:</p>
+<div class="section" id="parametres">
+<h1>Paramètres<a class="headerlink" href="#parametres" title="Permalink to this headline">¶</a></h1>
+<p>Quand vous ajoutez ou modifiez des types de contenu, vous allez remarquer un
+champ &#8216;Params&#8217; où vous pouvez entrer des paramètres. Il s&#8217;attend à ce qu&#8217;un
+paramètre soit entré par ligne avec une clé/valeur utilisant un signe égal
+en séparateur. Des exemples ci-dessous:</p>
 <blockquote>
 <div>my_param_key=value_here
 another_key=another_value</div></blockquote>
-<p>Supported parameter keys for content types:</p>
+<p>Les clés de paramètre supportés pour les types de contenu:</p>
 <ul class="simple">
-<li>nodes_per_page: Expects integer value greater than 0 for pagination limit of nodes</li>
-<li>routes: Expects 0 or 1 for beautiful URLs like <cite>/type-alias/node-slug</cite></li>
+<li>nodes_per_page: Attend un nombre entier supérieur à 0 pour la limite de la
+pagination des nodes</li>
+<li>routes: Attend 0 ou 1 pour de belles URLs de type <cite>/type-alias/node-slug</cite></li>
 </ul>
-<p>You are free to use more keys for parameters and they will be available in a nice formatted way by <a class="reference external" href="http://github.com/croogo/croogo/blob/master/models/behaviors/params.php">ParamsBehavior</a>.</p>
+<p>Vous êtes libre d&#8217;utiliser plus de clés pour les paramètres et elles seront
+disponibles dans un formatage sympa pour le behavior
+<a class="reference external" href="http://github.com/croogo/croogo/blob/master/models/behaviors/params.php">ParamsBehavior</a>.</p>
 </div>
 
 

@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="up" title="Comprendre CakePHP" href="../understanding-cakephp.html" />
     <link rel="next" title="Behaviors" href="behaviors.html" />
     <link rel="prev" title="Components" href="components.html" /> 
   </head>
@@ -63,8 +63,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Models</a></li>
@@ -76,11 +76,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -94,26 +94,34 @@
         
   <div class="section" id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
-<p>Read the CakePHP docs on Models: <a class="reference external" href="http://book.cakephp.org/2.0/en/models.html">http://book.cakephp.org/2.0/en/models.html</a>.</p>
-<div class="section" id="what-is-a-model">
-<h2>What is a Model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this headline">¶</a></h2>
-<p>Models represent data and are used in CakePHP applications for data access. A model usually represents a database table but can be used to access anything that stores data such as files, LDAP records, iCal events, or rows in a CSV file.</p>
-<p>A model can be associated with other models. For example, a Recipe may be associated with the Author of the recipe as well as the Ingredient in the recipe.
+<p>Lire la doc de CakePHP sur les Models:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/models.html">http://book.cakephp.org/2.0/en/models.html</a>.</p>
+<div class="section" id="qu-est-ce-qu-un-model">
+<h2>Qu&#8217;est-ce qu&#8217;un Model?<a class="headerlink" href="#qu-est-ce-qu-un-model" title="Permalink to this headline">¶</a></h2>
+<p>Les Models représentent les données et sont utilisés dans les applications
+CakePHP pour accéder aux données. Un model représente couramment une table
+de base de données mais peut aussi être utilisé pour accéder à tout ce qui
+stocke des données comme les fichiers, les enregistrements LDAP, les events
+iCal ou les lignes dans un fichier CSV.</p>
+<p>Un model peut être associé avec d&#8217;autres models. Par exemple, une Recipe peut
+être associée avec l&#8217;Author de la recipe ainsi que l&#8217;Ingredient dans la recipe.
 Code</p>
-<p>If you have a table named &#8216;recipes&#8217; (with columns id, title, body), the model name would be Recipe and found at <cite>/app/Model/Recipe.php</cite>:</p>
+<p>Si vous avez une table nommée &#8216;recipes&#8217; (avec les colonnes id, title, body), le
+nom du model serait Recipe et trouvé dans <cite>/app/Model/Recipe.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Recipe</span> <span class="k">extends</span> <span class="nx">AppModel</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="plugin-models">
-<h3>Plugin Models<a class="headerlink" href="#plugin-models" title="Permalink to this headline">¶</a></h3>
-<p>If it is Recipes plugin&#8217;s model, it would be found at <cite>/app/Plugin/Recipes/Model/Recipe.php</cite>.</p>
+<div class="section" id="les-models-du-plugin">
+<h3>Les Models du Plugin<a class="headerlink" href="#les-models-du-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Si c&#8217;est un model du plugin Recipes, il sera trouvé dans
+<cite>/app/Plugin/Recipes/Model/Recipe.php</cite>.</p>
 </div>
 </div>
-<div class="section" id="using-models-in-controllers">
-<h2>Using Models in Controllers<a class="headerlink" href="#using-models-in-controllers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="utilisation-des-models-dans-les-controllers">
+<h2>Utilisation des Models dans les Controllers<a class="headerlink" href="#utilisation-des-models-dans-les-controllers" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">RecipesController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
 

@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="up" title="Comprendre CakePHP" href="../understanding-cakephp.html" />
     <link rel="next" title="Helpers" href="helpers.html" />
     <link rel="prev" title="Behaviors" href="behaviors.html" /> 
   </head>
@@ -63,8 +63,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
@@ -76,11 +76,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -94,15 +94,20 @@
         
   <div class="section" id="views">
 <h1>Views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h1>
-<p>Read the CakePHP docs on Views: <a class="reference external" href="http://book.cakephp.org/2.0/en/views.html">http://book.cakephp.org/2.0/en/views.html</a>.</p>
-<div class="section" id="what-is-a-view">
-<h2>What is a View?<a class="headerlink" href="#what-is-a-view" title="Permalink to this headline">¶</a></h2>
-<p>Views are the V in MVC. Views are responsible for generating the specific output required for the request. Often this is in the form of HTML, XML, or JSON, but streaming files and creating PDF&#8217;s that users can download are also responsibilities of the View Layer.</p>
+<p>Lire la doc de CakePHP sur les Views: <a class="reference external" href="http://book.cakephp.org/2.0/en/views.html">http://book.cakephp.org/2.0/en/views.html</a>.</p>
+<div class="section" id="quoi-de-neuf">
+<h2>Quoi de neuf?<a class="headerlink" href="#quoi-de-neuf" title="Permalink to this headline">¶</a></h2>
+<p>Views sont le V dans MVC. Les Views sont responsables de la génération de
+sortie spécifique nécessaire pour la requête. Souvent, c&#8217;est sous forme de
+HTML, XML, ou JSON, mais le streaming de fichiers et la création de PDF que les
+utilisateurs peuvent télécharger sont aussi des responsabilités de la Couche
+View.</p>
 </div>
 </div>
 <div class="section" id="code">
 <h1>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
-<p>From previous example of Recipes, we will be placing out view file at <cite>/app/View/Recipes/view.ctp</cite>:</p>
+<p>A partir de l&#8217;exemple précédent des Recipes, nous allons afficher le fichier
+de view dans <cite>/app/View/Recipes/view.ctp</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;div class=&quot;recipes view&quot;&gt;</span>
 <span class="x">    &lt;h2&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$recipe</span><span class="p">[</span><span class="s1">&#39;Recipe&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
 
@@ -110,7 +115,8 @@
 <span class="x">&lt;/div&gt;</span>
 </pre></div>
 </div>
-<p>If it is Recipes plugin&#8217;s view, it would be found at <cite>/app/Plugin/Recipes/View/view.ctp</cite>.</p>
+<p>Si c&#8217;est la view du plugin Recipes, elle sera trouvée dans
+<cite>/app/Plugin/Recipes/View/view.ctp</cite>.</p>
 </div>
 
 

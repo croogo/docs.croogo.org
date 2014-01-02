@@ -26,8 +26,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
     <link rel="up" title="Plugins" href="../plugins.html" />
-    <link rel="next" title="Core plugins" href="../core-plugins.html" />
-    <link rel="prev" title="JSON file" href="json-file.html" /> 
+    <link rel="next" title="Plugins du Coeur" href="../core-plugins.html" />
+    <link rel="prev" title="Fichier JSON" href="json-file.html" /> 
   </head>
   <body>
 <div id="header">
@@ -63,20 +63,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../plugins.html">Plugins</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="bootstrap.html">Bootstrap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="file-structure.html">File structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="json-file.html">JSON file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Structure de Fichier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json-file.html">Fichier JSON</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Migrations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -90,29 +90,35 @@
         
   <div class="section" id="migrations">
 <h1>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="generate-migrations">
-<h2>Generate Migrations<a class="headerlink" href="#generate-migrations" title="Permalink to this headline">¶</a></h2>
-<p>Firstly, you need to activate your plugin in the administration</p>
-<p>Secondly, you need to generate your schema.php:</p>
+<div class="section" id="generer-des-migrations">
+<h2>Générer des Migrations<a class="headerlink" href="#generer-des-migrations" title="Permalink to this headline">¶</a></h2>
+<p>Premièrement, vous aurez besoin d&#8217;activer votre plugin dans l&#8217;administration</p>
+<p>Deuxièmement, vous aurez besoin de générer votre schema.php:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">./Console/cake schema generate -p yourPlugin</span>
 </pre></div>
 </div>
-<p>You must edit &#8220;schema.php&#8221; for some cleanup and refactoring. Since <cite>schema.php</cite>
-contains all existing tables in the application, you will need to remove them
-manually before including it in your plugin schema.  For example, table &#8220;acos&#8221;, &#8220;aros&#8221;, &#8220;aros_acos&#8221; and &#8220;i18n&#8221; belongs to Croogo core and must be removed from
-the generated file. Moreover join tables aren&#8217;t added in <cite>schema.php</cite> and you
-must add them by yourself.</p>
-<p>Next, you must create your migrations file. Its name must be unique:</p>
+<p>Vous devez éditer &#8220;schema.php&#8221; pour un peu de nettoyage et de refactoring.
+Puisque <cite>schema.php</cite> contient toutes les tables existantes de l&#8217;application,
+vous devrez les retirer manuellement avant de l&#8217;inclure dans votre schema de
+plugin. Par exemple, les tables &#8220;acos&#8221;, &#8220;aros&#8221;, &#8220;aros_acos&#8221; et &#8220;i18n&#8221;
+appartiennent au coeur de Croogo et doivent être retirées du fichier généré.
+De plus, les tables jointes ne sont pas ajoutées dans <cite>schema.php</cite> et vous
+devez les ajouter vous-même.</p>
+<p>Ensuite, vous devez créer votre fichier de migrations. Son nom doit être
+unique:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">./Console/cake Migrations.migration generate -p yourPlugin</span>
 </pre></div>
 </div>
-<p>Your migrations file is now created!</p>
+<p>Votre fichier de migrations est maintentant créé!</p>
 </div>
-<div class="section" id="apply-migrations">
-<h2>Apply Migrations<a class="headerlink" href="#apply-migrations" title="Permalink to this headline">¶</a></h2>
-<p>It&#8217;s your responsibility to apply migrations during activation of your plugin.
-You need to create (if the file doesn&#8217;t exist) <tt class="docutils literal"><span class="pre">YourPluginActivation.php</span></tt> in your Config folder: <tt class="docutils literal"><span class="pre">app/Plugin/YourPlugin/Config</span></tt></p>
-<p>In the method <tt class="docutils literal"><span class="pre">onActivation(&amp;$controller)</span></tt> you must add this 3 lines:</p>
+<div class="section" id="appliquer-les-migrations">
+<h2>Appliquer les Migrations<a class="headerlink" href="#appliquer-les-migrations" title="Permalink to this headline">¶</a></h2>
+<p>Il est de votre responsabilité d&#8217;appliquer les migrations pendant l&#8217;activation
+de votre plugin. Vous devez créer (si le fichiern&#8217;existe pas)
+<tt class="docutils literal"><span class="pre">YourPluginActivation.php</span></tt> dans votre dossier Config:
+<tt class="docutils literal"><span class="pre">app/Plugin/YourPlugin/Config</span></tt></p>
+<p>Dans la méthode <tt class="docutils literal"><span class="pre">onActivation(&amp;$controller)</span></tt>, vous devez ajouter ces 3
+lignes:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="nx">App</span><span class="o">::</span><span class="na">uses</span><span class="p">(</span><span class="s1">&#39;CroogoPlugin&#39;</span><span class="p">,</span> <span class="s1">&#39;Extensions.Lib&#39;</span><span class="p">);</span>
 <span class="nv">$CroogoPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CroogoPlugin</span><span class="p">();</span>
@@ -120,9 +126,11 @@ You need to create (if the file doesn&#8217;t exist) <tt class="docutils literal
 </pre></div>
 </div>
 </div>
-<div class="section" id="remove-migrations">
-<h2>Remove Migrations<a class="headerlink" href="#remove-migrations" title="Permalink to this headline">¶</a></h2>
-<p>If you want to remove all migrations during the deactivation you just need this 3 lines in method <tt class="docutils literal"><span class="pre">onDeactivation(&amp;$controller)</span></tt>:</p>
+<div class="section" id="retirer-les-migrations">
+<h2>Retirer les Migrations<a class="headerlink" href="#retirer-les-migrations" title="Permalink to this headline">¶</a></h2>
+<p>Si vous voulez retirer toutes les migrations pendant la désactivation, vous
+avez juste besoin de ces 3 lignes dans la méthode
+<tt class="docutils literal"><span class="pre">onDeactivation(&amp;$controller)</span></tt>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="nx">App</span><span class="o">::</span><span class="na">uses</span><span class="p">(</span><span class="s1">&#39;CroogoPlugin&#39;</span><span class="p">,</span> <span class="s1">&#39;Extensions.Lib&#39;</span><span class="p">);</span>
 <span class="nv">$CroogoPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CroogoPlugin</span><span class="p">();</span>
@@ -142,10 +150,10 @@ You need to create (if the file doesn&#8217;t exist) <tt class="docutils literal
       <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
     </li>
     <li>
-      <a href="../core-plugins.html" title="Core plugins" accesskey="N">next</a>
+      <a href="../core-plugins.html" title="Plugins du Coeur" accesskey="N">next</a>
     </li>
     <li>
-      <a href="json-file.html" title="JSON file" accesskey="P">previous</a>
+      <a href="json-file.html" title="Fichier JSON" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

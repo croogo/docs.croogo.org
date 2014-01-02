@@ -25,9 +25,9 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Core plugins" href="../core-plugins.html" />
+    <link rel="up" title="Plugins du Coeur" href="../core-plugins.html" />
     <link rel="next" title="Ckeditor" href="ckeditor.html" />
-    <link rel="prev" title="Core plugins" href="../core-plugins.html" /> 
+    <link rel="prev" title="Plugins du Coeur" href="../core-plugins.html" /> 
   </head>
   <body>
 <div id="header">
@@ -63,12 +63,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Core plugins</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">Wysiwyg</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ckeditor.html">Ckeditor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tinymce.html">TinyMCE</a></li>
@@ -76,7 +76,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -90,13 +90,14 @@
         
   <div class="section" id="wysiwyg">
 <h1>Wysiwyg<a class="headerlink" href="#wysiwyg" title="Permalink to this headline">¶</a></h1>
-<p>Wysiwyg is a generic wrapper plugin to allow interfacing and setup or
-web Rich Text Editors.</p>
+<p>Wysiwyg est un plugin de wrapper générique pour permettre l&#8217;interface et la
+configuration d&#8217;Editeurs de Texte Riche.</p>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>There is no configuration required on the plugin itself. Instead, you enable
-editors by activating it in your own plugin.  For example, the <cite>Nodes</cite> plugin
-activate the RTEs in its own <cite>Config/bootstrap.php</cite> file:</p>
+<p>Il n&#8217;y a pas de configuration nécessaire pour le plugin lui-même. A la place,
+vous activez les éditeurs en les activant dans votre propre plugin. Par
+exemple, le plugin <cite>Nodes</cite> active les RTEs dans son propre fichier
+<cite>Config/bootstrap.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">Croogo::mergeConfig(&#39;Wysiwyg.actions&#39;, array(</span>
 <span class="x">    &#39;Nodes/admin_add&#39; =&gt; array(</span>
 <span class="x">        array(</span>
@@ -132,7 +133,7 @@ activate the RTEs in its own <cite>Config/bootstrap.php</cite> file:</p>
       <a href="ckeditor.html" title="Ckeditor" accesskey="N">next</a>
     </li>
     <li>
-      <a href="../core-plugins.html" title="Core plugins" accesskey="P">previous</a>
+      <a href="../core-plugins.html" title="Plugins du Coeur" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

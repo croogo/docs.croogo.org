@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Working with Git &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Travailler avec Git &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
     <link rel="up" title="Développeurs" href="../developers.html" />
-    <link rel="next" title="Understanding CakePHP" href="understanding-cakephp.html" />
+    <link rel="next" title="Comprendre CakePHP" href="understanding-cakephp.html" />
     <link rel="prev" title="Développeurs" href="../developers.html" /> 
   </head>
   <body>
@@ -63,17 +63,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Working with Git</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Travailler avec Git</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contribuer">Contribuer</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../translators.html">Traducteurs</a></li>
@@ -85,10 +85,13 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="working-with-git">
-<h1>Working with Git<a class="headerlink" href="#working-with-git" title="Permalink to this headline">¶</a></h1>
-<p>The git repository of Croogo is hosted at GitHub. The repository contains content of the <cite>app</cite> directory only so you need to download CakePHP before cloning it.</p>
-<p>Once you have downloaded and extracted the archive of CakePHP, browse to the <cite>app</cite> directory and empty it. Now run the following:</p>
+  <div class="section" id="travailler-avec-git">
+<h1>Travailler avec Git<a class="headerlink" href="#travailler-avec-git" title="Permalink to this headline">¶</a></h1>
+<p>Le dépôt git de Croogo est hébergé sur GitHub. Le dépôt contient le contenu
+du dépôt de <cite>app</cite> seulement, ainsi vous avez besoin de télécharger CakePHP
+avant de le dupliquer.</p>
+<p>Une fois que vous avez téléchargé et extrait l&#8217;archive de CakePHP, naviguez
+vers le dépôt <cite>app</cite> et effacez le. Maintenant lancez ce qui suit:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ cd app</span>
 <span class="x">$ git init</span>
 <span class="x">$ git remote add origin git://github.com/croogo/croogo.git</span>
@@ -96,14 +99,16 @@
 <span class="x">$ git submodule update --init</span>
 </pre></div>
 </div>
-<div class="section" id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
-<p>The best way to contribute code to the core is by forking the repository on GitHub, making changes, and then sending a pull request. To do this:</p>
+<div class="section" id="contribuer">
+<h2>Contribuer<a class="headerlink" href="#contribuer" title="Permalink to this headline">¶</a></h2>
+<p>La meilleur façon de contribuer au code du coeur est de forker le dépôt sur
+GitHub, de faire des changements, et ensuite d&#8217;envoyer une pull request. Pour
+faire ceci:</p>
 <ul class="simple">
-<li>Get yourself a GitHub account</li>
-<li>Fork Croogo.</li>
-<li>Then you will have your fork at <a class="reference external" href="http://github.com/yourusername/croogo">http://github.com/yourusername/croogo</a>.</li>
-<li>Make any changes to it, and send a pull request.</li>
+<li>Créez-vous un compte GitHub</li>
+<li>Forkez Croogo.</li>
+<li>Ensuite vous aurez votre fork à l&#8217;adresse <a class="reference external" href="http://github.com/yourusername/croogo">http://github.com/yourusername/croogo</a>.</li>
+<li>Faites tout changement sur celui-ci, et envoyez une pull request.</li>
 </ul>
 </div>
 </div>
@@ -118,7 +123,7 @@
       <a href="../genindex.html" title="General Index" accesskey="I">index</a>
     </li>
     <li>
-      <a href="understanding-cakephp.html" title="Understanding CakePHP" accesskey="N">next</a>
+      <a href="understanding-cakephp.html" title="Comprendre CakePHP" accesskey="N">next</a>
     </li>
     <li>
       <a href="../developers.html" title="Développeurs" accesskey="P">previous</a>

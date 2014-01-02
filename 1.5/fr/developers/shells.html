@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
     <link rel="up" title="Développeurs" href="../developers.html" />
-    <link rel="next" title="Tips" href="tips.html" />
+    <link rel="next" title="Astuces" href="tips.html" />
     <link rel="prev" title="Translate" href="core-plugins/translate.html" /> 
   </head>
   <body>
@@ -63,12 +63,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Shells</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-shell">Install Shell</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ext-shell">Ext Shell</a></li>
@@ -76,7 +76,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#users-shell">Users Shell</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../translators.html">Traducteurs</a></li>
@@ -90,57 +90,62 @@
         
   <div class="section" id="shells">
 <h1>Shells<a class="headerlink" href="#shells" title="Permalink to this headline">¶</a></h1>
-<p>Croogo now has the ability to install and activate extensions from the command line. To access the shells cd in your <cite>app</cite> folder and run the commands using: <cite>./Console/cake [shell]</cite>.</p>
+<p>Croogo a maintenant la capacité d&#8217;installer et d&#8217;activer les extensions à
+partir des lignes de commande. Pour accéder les shells cd dans votre dossier
+<cite>app</cite> et lance les commandes en utilisant: <cite>./Console/cake [shell]</cite>.</p>
 <div class="section" id="install-shell">
 <h2>Install Shell<a class="headerlink" href="#install-shell" title="Permalink to this headline">¶</a></h2>
-<p>Most extensions you&#8217;ll find on Github.com. To install the megamenu plugin extension from github type:</p>
+<p>La plupart des extensions que vous trouverez sur Github.com. Pour installer
+l&#8217;extension du plugin megamenu à partir de github, tapez:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install plugin https://github.com/rchavik/megamenu</span>
 </pre></div>
 </div>
-<p>Or:</p>
+<p>Ou:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install plugin rchavik megamenu</span>
 </pre></div>
 </div>
-<p>Themes can also be installed the same way:</p>
+<p>Les themes peuvent aussi être installés de la même façon:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install theme https://github.com/fahad19/themes</span>
 </pre></div>
 </div>
-<p>If you have a zip file located somewhere else, type:</p>
+<p>Si vous avez un fichier zip localisé ailleurs, tapez:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake install theme http://example.com/mytheme.zip</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ext-shell">
 <h2>Ext Shell<a class="headerlink" href="#ext-shell" title="Permalink to this headline">¶</a></h2>
-<p>You can activate/deactivate plugins and themes from the console. To activate the Megamenu extension previously installed:</p>
+<p>Vous pouvez activer/désactiver les plugins et themes à partir de la console.
+Pour activer l&#8217;extension Megamenu installé précedemment:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake ext activate plugin Megamenu</span>
 </pre></div>
 </div>
-<p>To deactivate:</p>
+<p>Pour désactiver:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake ext deactivate plugin Megamenu</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="settings-shell">
 <h2>Settings Shell<a class="headerlink" href="#settings-shell" title="Permalink to this headline">¶</a></h2>
-<p>The Settings plugin provides a few utility command to manipulate configuration values:</p>
+<p>Le plugin Settings fournit quelques utilitaires de commandes pour manipuler
+les valeurs de configuration:</p>
 <ul>
-<li><p class="first">Reading a configuration:</p>
+<li><p class="first">Lire une configuration:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings read Site.title</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Writing a configuration value:</p>
+<li><p class="first">Ecrire une valeur de configuration:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings write Site.title &quot;My Awesome Site&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Deleting a configuration value:</p>
+<li><p class="first">Effacer une valeur de configuration:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings delete Custom.settingValue</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Updating version information after an upgrade:</p>
+<li><p class="first">Mettre à jour une information de la version après un upgrade:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake settings.settings upgrade_version_info</span>
 </pre></div>
 </div>
@@ -149,7 +154,7 @@
 </div>
 <div class="section" id="users-shell">
 <h2>Users Shell<a class="headerlink" href="#users-shell" title="Permalink to this headline">¶</a></h2>
-<p>You can reset a user&#8217;s password from the shell:</p>
+<p>Vous pouvez réinitialiser un mot de passe de l&#8217;utilisateur à partir du shell:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$ ./Console/cake users.users reset admin password</span>
 </pre></div>
 </div>
@@ -166,7 +171,7 @@
       <a href="../genindex.html" title="General Index" accesskey="I">index</a>
     </li>
     <li>
-      <a href="tips.html" title="Tips" accesskey="N">next</a>
+      <a href="tips.html" title="Astuces" accesskey="N">next</a>
     </li>
     <li>
       <a href="core-plugins/translate.html" title="Translate" accesskey="P">previous</a>

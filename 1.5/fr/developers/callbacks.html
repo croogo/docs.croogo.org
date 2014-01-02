@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../index.html" />
     <link rel="up" title="Développeurs" href="../developers.html" />
-    <link rel="next" title="View Blocks" href="view-blocks.html" />
+    <link rel="next" title="Les Blocks de View" href="view-blocks.html" />
     <link rel="prev" title="Helpers" href="understanding-cakephp/helpers.html" /> 
   </head>
   <body>
@@ -63,18 +63,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Callbacks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#components">Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#helpers">Helpers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../translators.html">Traducteurs</a></li>
@@ -90,12 +90,12 @@
 <h1>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="components">
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
-<p>The following callbacks are supported for components by CakePHP.</p>
+<p>Les callbacks suivants sont supportés pour les components par CakePHP.</p>
 <ul class="simple">
-<li>initialize: Called before Controller::beforeFilter()</li>
-<li>startup: Called after the Controller::beforeFilter() and before the controller action</li>
-<li>beforeRender: Called after the Controller::beforeRender(), after the view class is loaded, and before the Controller::render()</li>
-<li>shutdown: Called after Controller::render() and before the output is printed to the browser.</li>
+<li>initialize: Appelé avant Controller::beforeFilter()</li>
+<li>startup: Appelé après the Controller::beforeFilter() et avant l&#8217;action du controller</li>
+<li>beforeRender: Appelé après le Controller::beforeRender(), après que la classe de view est chargé, et avant le Controller::render()</li>
+<li>shutdown: Appelé après Controller::render() et avant que la sortie soit affichée au navigateur.</li>
 </ul>
 <div class="section" id="code">
 <h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
@@ -132,27 +132,28 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Learn more about components from <a class="reference external" href="http://book.cakephp.org/2.0/en/controllers/components.html">http://book.cakephp.org/2.0/en/controllers/components.html</a>.</p>
+<p>Apprenez plus sur les components dans
+<a class="reference external" href="http://book.cakephp.org/2.0/en/controllers/components.html">http://book.cakephp.org/2.0/en/controllers/components.html</a>.</p>
 </div>
 </div>
 <div class="section" id="helpers">
 <h2>Helpers<a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h2>
-<p>The following callbacks are supported for helpers by CakePHP:</p>
+<p>Les callbacks suivants sont supportés pour les helpers par CakePHP:</p>
 <ul class="simple">
-<li>beforeRender: Called before the view file is rendered.</li>
-<li>afterRender: Called after the view file is rendered but before the layout has been rendered.</li>
-<li>beforeLayout: Called before the layout is rendered.</li>
-<li>afterLayout: Called after the layout has rendered.</li>
+<li>beforeRender: Appelé avant que le fichier de view soit rendu.</li>
+<li>afterRender: Appelé après que le fichier de view est rendu mais avant que le layout ait été rendu.</li>
+<li>beforeLayout: Appelé avant que le layout soit rendu.</li>
+<li>afterLayout: Appelé après que le layout est rendu.</li>
 </ul>
-<p>Extra callbacks by Croogo for better integration</p>
+<p>Les callbacks supplémentaires dans Croogo pour une meilleure intégration</p>
 <ul class="simple">
-<li>afterSetNode: Called after LayoutHelper::setNode(). A good place to modify node content.</li>
-<li>beforeNodeInfo: Called before LayoutHelper::nodeInfo().</li>
-<li>afterNodeInfo: Called after LayoutHelper::nodeInfo().</li>
-<li>beforeNodeBody: Called before LayoutHelper::nodeBody().</li>
-<li>afterNodeBody: Called after LayoutHelper::nodeBody().</li>
-<li>beforeNodeMoreInfo: Called before LayoutHelper::nodeMoreInfo().</li>
-<li>afterNodeMoreInfo: Called after LayoutHelper::nodeMoreInfo()</li>
+<li>afterSetNode: Appelé après LayoutHelper::setNode(). Une bonne place pour modifier le contenu du node.</li>
+<li>beforeNodeInfo: Appelé avant LayoutHelper::nodeInfo().</li>
+<li>afterNodeInfo: Appelé après LayoutHelper::nodeInfo().</li>
+<li>beforeNodeBody: Appelé avant LayoutHelper::nodeBody().</li>
+<li>afterNodeBody: Appelé après LayoutHelper::nodeBody().</li>
+<li>beforeNodeMoreInfo: Appelé avant LayoutHelper::nodeMoreInfo().</li>
+<li>afterNodeMoreInfo: Appelé après LayoutHelper::nodeMoreInfo()</li>
 </ul>
 <div class="section" id="id1">
 <h3>Code<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -210,7 +211,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Learn more about helpers from <a class="reference external" href="http://book.cakephp.org/2.0/en/views/helpers.html">http://book.cakephp.org/2.0/en/views/helpers.html</a>.</p>
+<p>En lire plus sur les helpers dans
+<a class="reference external" href="http://book.cakephp.org/2.0/en/views/helpers.html">http://book.cakephp.org/2.0/en/views/helpers.html</a>.</p>
 </div>
 </div>
 </div>
@@ -225,7 +227,7 @@
       <a href="../genindex.html" title="General Index" accesskey="I">index</a>
     </li>
     <li>
-      <a href="view-blocks.html" title="View Blocks" accesskey="N">next</a>
+      <a href="view-blocks.html" title="Les Blocks de View" accesskey="N">next</a>
     </li>
     <li>
       <a href="understanding-cakephp/helpers.html" title="Helpers" accesskey="P">previous</a>

@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="up" title="Comprendre CakePHP" href="../understanding-cakephp.html" />
     <link rel="next" title="Views" href="views.html" />
     <link rel="prev" title="Models" href="models.html" /> 
   </head>
@@ -63,8 +63,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
@@ -76,11 +76,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -94,13 +94,34 @@
         
   <div class="section" id="behaviors">
 <h1>Behaviors<a class="headerlink" href="#behaviors" title="Permalink to this headline">¶</a></h1>
-<p>Read the CakePHP docs on Behaviors: <a class="reference external" href="http://book.cakephp.org/2.0/en/models/behaviors.html">http://book.cakephp.org/2.0/en/models/behaviors.html</a>.</p>
-<p>Model behaviors are a way to organize some of the functionality defined in CakePHP models. They allow us to separate logic that may not be directly related to a model, but needs to be there. By providing a simple yet powerful way to extend models, behaviors allow us to attach functionality to models by defining a simple class variable. That&#8217;s how behaviors allow models to get rid of all the extra weight that might not be part of the business contract they are modeling, or that is also needed in different models and can then be extrapolated.</p>
-<p>As an example, consider a model that gives us access to a database table which stores structural information about a tree. Removing, adding, and migrating nodes in the tree is not as simple as deleting, inserting, and editing rows in the table. Many records may need to be updated as things move around. Rather than creating those tree-manipulation methods on a per model basis (for every model that needs that functionality), we could simply tell our model to use the TreeBehavior, or in more formal terms, we tell our model to behave as a Tree. This is known as attaching a behavior to a model. With just one line of code, our CakePHP model takes on a whole new set of methods that allow it to interact with the underlying structure.</p>
+<p>Lire la doc CakePHP sur les Behaviors:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/models/behaviors.html">http://book.cakephp.org/2.0/en/models/behaviors.html</a>.</p>
+<p>Les behaviors du Model sont une façon d&#8217;organiser quelques unes des
+fonctionnalités définies dans les models de CakePHP. Ils nous permettent
+de séparer la logique qui n&#8217;est pas forcément directement lié au model, mais
+a besoin d&#8217;être là. En fournissant une façon simple et pourtant puissante
+d&#8217;étendre les models, behaviors nous permet d&#8217;attacher une fonctionnalité aux
+models en définissant une variable de classe simple. C&#8217;est la façon dont
+les behaviors permettent d&#8217;autoriser les models d&#8217;utiliser tous le poids
+supplémentaire qui ne sera pas partie du contrat de business qu&#8217;ils modèlent,
+ou qui est aussi nécessaire dans différents models et peuvent être extrapolés.</p>
+<p>En exemple, considérons un model qui nous donne un accès à une table de la base
+de données qui stocke l&#8217;information structurelle sur un Tree. Retirer, ajouter,
+et migrer les nodes dans le tree n&#8217;est pas aussi simple que de supprimer,
+insérer et éditer des lignes dans la table. Plusieurs enregistrements peuvent
+être mis à jour puisque les choses bougent autour. Plutôt que de créer ces
+méthodes de manipulation-tree sur les bases d&#8217;un model (pour chaque model qui
+a besoin de cette fonctionnalité), nous pourrions simplement dire à notre
+model d&#8217;utiliser le TreeBehavior, ou dans des termes plus formels, nous
+disons à notre model de se comporter en Tree. On le fait en attachant un
+behavior à un model. Avec juste une ligne de code, notre model de CakePHP prend
+un nouvel ensemble de méthodes qui lui permet d&#8217;intéragir avec la structure
+soulignée.</p>
 </div>
 <div class="section" id="code">
 <h1>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
-<p>If your Behavior&#8217;s name is Example, it would be found at <cite>/app/Model/Behavior/ExampleBehavior.php</cite>:</p>
+<p>Si le nom de votre Behavior est Example, il sera trouvé dans
+<cite>/app/Model/Behavior/ExampleBehavior.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">ExampleBehavior</span> <span class="k">extends</span> <span class="nx">ModelBehavior</span> <span class="p">{</span>
 
@@ -131,11 +152,12 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="plugin-behaviors">
-<h2>Plugin Behaviors<a class="headerlink" href="#plugin-behaviors" title="Permalink to this headline">¶</a></h2>
-<p>If it is Example plugin&#8217;s behavior, it would be found at <cite>/app/Plugin/Example/Model/Behavior/ExampleBehavior.php</cite>.</p>
-<div class="section" id="using-behaviors-in-models">
-<h3>Using Behaviors in Models<a class="headerlink" href="#using-behaviors-in-models" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="behaviors-de-plugin">
+<h2>Behaviors de Plugin<a class="headerlink" href="#behaviors-de-plugin" title="Permalink to this headline">¶</a></h2>
+<p>Si il y a un behavior du plugin Example, il sera trouvé dans
+<cite>/app/Plugin/Example/Model/Behavior/ExampleBehavior.php</cite>.</p>
+<div class="section" id="utilisation-des-behaviors-dans-les-models">
+<h3>Utilisation des Behaviors dans les Models<a class="headerlink" href="#utilisation-des-behaviors-dans-les-models" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Recipe</span> <span class="k">extends</span> <span class="nx">AppModel</span> <span class="p">{</span>
 

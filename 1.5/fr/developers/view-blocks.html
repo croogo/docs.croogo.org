@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>View Blocks &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Les Blocks de View &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
@@ -63,18 +63,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="callbacks.html">Callbacks</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">View Blocks</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Les Blocks de View</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#admin-index">admin_index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#admin-edit-admin-add">admin_edit / admin_add</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../translators.html">Traducteurs</a></li>
@@ -86,11 +86,13 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="view-blocks">
-<h1>View Blocks<a class="headerlink" href="#view-blocks" title="Permalink to this headline">¶</a></h1>
-<p>CakePHP view blocks have been implemented into Croogo 1.4 for admin_index, admin_add, and admin_edit.</p>
-<p>Read the CakePHP docs on view blocks: <a class="reference external" href="http://book.cakephp.org/2.0/en/views.html#using-view-blocks">http://book.cakephp.org/2.0/en/views.html#using-view-blocks</a>.</p>
-<p>You can override the default Croogo blocks:</p>
+  <div class="section" id="les-blocks-de-view">
+<h1>Les Blocks de View<a class="headerlink" href="#les-blocks-de-view" title="Permalink to this headline">¶</a></h1>
+<p>Les blocks de view de CakePHP ont été implementés dans Croogo 1.4 pour
+admin_index, admin_add, et admin_edit.</p>
+<p>Lisez la doc de CakePHP sur les blocks de view:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/views.html#using-view-blocks">http://book.cakephp.org/2.0/en/views.html#using-view-blocks</a>.</p>
+<p>Vous pouvez surcharger les blocks par défaut de Croogo:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">extend</span><span class="p">(</span><span class="s1">&#39;/Common/admin_index&#39;</span><span class="p">);</span>
 <span class="c1">// Use assign for single line overrides</span>
@@ -108,20 +110,20 @@
 </div>
 <div class="section" id="admin-index">
 <h2>admin_index<a class="headerlink" href="#admin-index" title="Permalink to this headline">¶</a></h2>
-<p>The following blocks are available:</p>
+<p>Les blocks suivants sont disponibles:</p>
 <ul class="simple">
-<li>title: Override the title.</li>
-<li>tabs: Override the li link tabs.</li>
-<li>paging: Override the pagination numbers and counter.</li>
+<li>title: Surcharge le titre.</li>
+<li>tabs: Surcharge les li link tabs.</li>
+<li>paging: Surcharge les nombres et le compteur de la pagination.</li>
 </ul>
 </div>
 <div class="section" id="admin-edit-admin-add">
 <h2>admin_edit / admin_add<a class="headerlink" href="#admin-edit-admin-add" title="Permalink to this headline">¶</a></h2>
-<p>The following blocks are available:</p>
+<p>Les blocks suivants sont disponibles:</p>
 <ul class="simple">
-<li>title: Override the title.</li>
-<li>actions: Override the li link actions.</li>
-<li>buttons: Override the Save and Cancel buttons.</li>
+<li>title: Surcharge le titre.</li>
+<li>actions: Surcharge les li link actions.</li>
+<li>buttons: Surcharge les boutons Save et Cancel.</li>
 </ul>
 </div>
 </div>

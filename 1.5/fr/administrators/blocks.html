@@ -65,14 +65,14 @@
 <li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Blocks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#elements">Elements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-display-a-this-and-that-in-a-block">How to display a THIS and THAT in a block?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-afficher-un-this-et-that-dans-un-block">Comment afficher un THIS et THAT dans un block?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="media.html">Media</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contacts.html">Contacts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="users.html">Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Users (Utilisateurs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Paramètres</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
@@ -88,35 +88,44 @@
         
   <div class="section" id="blocks">
 <h1>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h1>
-<p>Blocks are what you see in the sidebar (‘right’ region in default theme) as boxes. They belong to a particular region.</p>
+<p>Les Blocks sont ce que vous voyez dans la sidebar (region ‘right’ dans le theme
+default) en boites. Ils appartiennent à une region particulière.</p>
 <div class="section" id="elements">
 <h2>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h2>
-<p>All blocks are rendered via block.ctp element (found in app/Plugin/Blocks/View/Elements/block.ctp). You can use your own element too for your blocks by editing &#8216;element&#8217; field when adding a block.</p>
-<p>Tip: If it is a plugin element, enter &#8216;PluginName.element_name&#8217;.</p>
+<p>Tous les blocks sont rendus via l&#8217;element block.ctp (trouvé dans
+app/Plugin/Blocks/View/Elements/block.ctp). Vous pouvez aussi utiliser votre
+propre element pour vos blocks en modifiant le champ &#8216;element&#8217; lors de l&#8217;ajout
+d&#8217;un block.</p>
+<p>Tip: Si c&#8217;est un element de plugin, entrez &#8216;PluginName.element_name&#8217;.</p>
 </div>
-<div class="section" id="how-to-display-a-this-and-that-in-a-block">
-<h2>How to display a THIS and THAT in a block?<a class="headerlink" href="#how-to-display-a-this-and-that-in-a-block" title="Permalink to this headline">¶</a></h2>
-<p>You are able to show an element, menu, vocabulary (nested list of terms), or a list of nodes by entering specially formatted text in your block’s body.</p>
+<div class="section" id="comment-afficher-un-this-et-that-dans-un-block">
+<h2>Comment afficher un THIS et THAT dans un block?<a class="headerlink" href="#comment-afficher-un-this-et-that-dans-un-block" title="Permalink to this headline">¶</a></h2>
+<p>Vous êtes capable de montrer un element, menu, vocabulary (une liste imbriquée
+de termes), ou une liste de noeuds en entrant un texte spécialement formaté
+dans le corps de votre block.</p>
 <div class="section" id="element">
 <h3>Element<a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h3>
-<p>For an element with file name my_element.ctp:</p>
+<p>Pour un element avec un nom de fichier my_element.ctp:</p>
 <blockquote>
 <div>[element:my_element] OR [e:my_element]</div></blockquote>
-<p>Passing variables to your element:</p>
+<p>Passer des variables à votre element:</p>
 <blockquote>
 <div>[element:my_element myVar=&#8221;value here&#8221; anotherVar=&#8221;value here&#8221;]</div></blockquote>
-<p>For plugin elements:</p>
+<p>Pour les elements de plugin:</p>
 <blockquote>
 <div>[element:my_element plugin=&#8221;my_plugin&#8221;]</div></blockquote>
 </div>
 <div class="section" id="menu">
 <h3>Menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h3>
-<p>For a Menu with alias main:</p>
 <blockquote>
-<div>[menu:main] OR [m:main]</div></blockquote>
-<p>Advanced</p>
-<p><tt class="docutils literal"><span class="pre">This</span> <span class="pre">options</span> <span class="pre">could</span> <span class="pre">drastically</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">way</span> <span class="pre">your</span> <span class="pre">website</span> <span class="pre">works,</span> <span class="pre">handle</span> <span class="pre">with</span> <span class="pre">caution</span></tt></p>
-<p>Variables supported:</p>
+<div><blockquote>
+<div>Pour un Menu avec l&#8217;alias main:</div></blockquote>
+<p>[menu:main] OR [m:main]</p>
+</div></blockquote>
+<p>Avancé</p>
+<p><tt class="docutils literal"><span class="pre">Ces</span> <span class="pre">options</span> <span class="pre">peuvent</span> <span class="pre">changer</span> <span class="pre">drastiquement</span> <span class="pre">la</span> <span class="pre">façon</span> <span class="pre">dont</span> <span class="pre">votre</span> <span class="pre">site</span> <span class="pre">web</span>
+<span class="pre">fonctionne,</span> <span class="pre">à</span> <span class="pre">manier</span> <span class="pre">avec</span> <span class="pre">précaution</span></tt></p>
+<p>Variables supportées:</p>
 <ul class="simple">
 <li>tag=&#8221;htmlTag&#8221; : tag to wrap content output</li>
 <li>tagAttributes=&#8221;className&#8221; : class name for wrapping tag</li>
@@ -128,37 +137,44 @@
 </div>
 <div class="section" id="vocabulary">
 <h3>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h3>
-<p>For a Vocabulary with alias categories:</p>
+<p>Pour un Vocabulary avec l&#8217;alias categories:</p>
 <blockquote>
 <div>[vocabulary:categories] OR [v:categories]</div></blockquote>
-<p>Advanced</p>
-<p><tt class="docutils literal"><span class="pre">This</span> <span class="pre">options</span> <span class="pre">could</span> <span class="pre">drastically</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">way</span> <span class="pre">your</span> <span class="pre">website</span> <span class="pre">works,</span> <span class="pre">handle</span> <span class="pre">with</span> <span class="pre">caution</span></tt></p>
-<p>Variables supported :</p>
+<p>Avancé</p>
+<p><tt class="docutils literal"><span class="pre">Ces</span> <span class="pre">options</span> <span class="pre">peuvent</span> <span class="pre">changer</span> <span class="pre">drastiquement</span> <span class="pre">la</span> <span class="pre">façon</span> <span class="pre">dont</span> <span class="pre">votre</span> <span class="pre">site</span> <span class="pre">web</span>
+<span class="pre">fonctionne,</span> <span class="pre">à</span> <span class="pre">manier</span> <span class="pre">avec</span> <span class="pre">précaution</span></tt></p>
+<p>Variables supportées :</p>
 <ul class="simple">
-<li>link=&#8221;true&#8221; : if true, it creates a link for each vocabulary found, it will create the link using the supplied arguments for plugin, controller, action and type.</li>
-<li>plugin=&#8221;nameOfPlugin&#8221; : plugin name supplied to create link</li>
-<li>controller=&#8221;controller&#8221; : controller name supplied to create link</li>
-<li>action=&#8221;action&#8221; : action name supplied to create link</li>
-<li>type=&#8221;type&#8221; : type of node supplied to create link</li>
+<li>link=&#8221;true&#8221; : si à true, cela crée un lien pour chaque vocabulary trouvé, il
+va créer le lien en utilisant les arguments fournis pour le plugin,
+controller, action et le type.</li>
+<li>plugin=&#8221;nameOfPlugin&#8221; : nom du plugin fourni pour créer un lien</li>
+<li>controller=&#8221;controller&#8221; : nom du controller fourni pour créer un lien</li>
+<li>action=&#8221;action&#8221; : nom de l&#8217;action fourni pour créer un lien</li>
+<li>type=&#8221;type&#8221; : type de node fourni pour créer un lien</li>
 <li>tag=&#8221;htmlTag&#8221; : tag to wrap content output</li>
 <li>tagAttributes=&#8221;className&#8221; : className for wrapping tag</li>
-<li>element=&#8221;Taxonomy.vocabulary&#8221; : Element to use as template</li>
+<li>element=&#8221;Taxonomy.vocabulary&#8221; : Element à utiliser comme template</li>
 </ul>
 </div>
 <div class="section" id="nodes">
 <h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
-<p>For example, you want to show a list of 5 most recent blog posts as a block:</p>
+<p>Par exemple, vous voulez montrer une liste des 5 posts les plus récents dans un
+block:</p>
 <blockquote>
 <div>[node:recent_posts conditions=&#8221;Node.type:blog;Node.status:1&#8221; order=&#8221;Node.id DESC&#8221; limit=&#8221;5&#8221;]</div></blockquote>
-<p>Advanced</p>
-<p><tt class="docutils literal"><span class="pre">This</span> <span class="pre">options</span> <span class="pre">could</span> <span class="pre">drastically</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">way</span> <span class="pre">your</span> <span class="pre">website</span> <span class="pre">works,</span> <span class="pre">handle</span> <span class="pre">with</span> <span class="pre">caution</span></tt></p>
-<p>Variables supported :</p>
+<p>Avancé</p>
+<p><tt class="docutils literal"><span class="pre">Ces</span> <span class="pre">options</span> <span class="pre">peuvent</span> <span class="pre">changer</span> <span class="pre">drastiquement</span> <span class="pre">la</span> <span class="pre">façon</span> <span class="pre">dont</span> <span class="pre">votre</span> <span class="pre">site</span> <span class="pre">web</span>
+<span class="pre">fonctionne,</span> <span class="pre">à</span> <span class="pre">manier</span> <span class="pre">avec</span> <span class="pre">précaution</span></tt></p>
+<p>Variables supportées :</p>
 <ul class="simple">
-<li>link=&#8221;true&#8221; : if true, it creates a link for each node found, it will create the link using the supplied arguments for plugin, controller, action and type.</li>
-<li>plugin=&#8221;nodes&#8221; : plugin name supplied to create link</li>
-<li>controller=&#8221;nodes&#8221; : controller name supplied to create link</li>
-<li>action=&#8221;view&#8221; : action name supplied to create link</li>
-<li>element=&#8221;Nodes.node_list&#8221; : Element to use as template</li>
+<li>link=&#8221;true&#8221; : si à true, cela crée un lien pour chaque vocabulary trouvé, il
+va créer le lien en utilisant les arguments fournis pour le plugin,
+controller, action et le type.</li>
+<li>plugin=&#8221;nodes&#8221; : nom du plugin fourni pour créer un lien</li>
+<li>controller=&#8221;nodes&#8221; : nom du controller fourni pour créer un lien</li>
+<li>action=&#8221;view&#8221; : nom de l&#8217;action fourni pour créer un lien</li>
+<li>element=&#8221;Nodes.node_list&#8221; : Element à utiliser comme template</li>
 </ul>
 </div>
 </div>

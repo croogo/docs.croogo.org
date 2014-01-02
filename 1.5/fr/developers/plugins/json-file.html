@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>JSON file &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Fichier JSON &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/reset.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
     <link rel="up" title="Plugins" href="../plugins.html" />
     <link rel="next" title="Migrations" href="migrations.html" />
-    <link rel="prev" title="File structure" href="file-structure.html" /> 
+    <link rel="prev" title="Structure de Fichier" href="file-structure.html" /> 
   </head>
   <body>
 <div id="header">
@@ -63,20 +63,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../plugins.html">Plugins</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="bootstrap.html">Bootstrap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="file-structure.html">File structure</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">JSON file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-structure.html">Structure de Fichier</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Fichier JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="migrations.html">Migrations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -88,17 +88,21 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="json-file">
-<h1>JSON file<a class="headerlink" href="#json-file" title="Permalink to this headline">¶</a></h1>
-<p>A plugin.json file is required for every plugin in Croogo that requires to be activated from admin panel. It stores useful information like the developer&#8217;s contact details, as well as information on it&#8217;s dependencies.</p>
-<p>If your plugin&#8217;s name is Example, the content of <cite>plugin.json</cite> file at <cite>app/Plugin/Example/Config/plugin.json</cite> could be:</p>
+  <div class="section" id="fichier-json">
+<h1>Fichier JSON<a class="headerlink" href="#fichier-json" title="Permalink to this headline">¶</a></h1>
+<p>Un fichier plugin.json est nécessaire pour chaque plugin dans Croogo qui a
+besoin d&#8217;être activé à partir du panneau admin. Il stocke des informations
+utiles comme les détails de contact du développeur, ainsi que des informations
+sur ses dépendances.</p>
+<p>Si le nom de votre plugin est Example, le contenu du fichier <cite>plugin.json</cite>
+dans <cite>app/Plugin/Example/Config/plugin.json</cite> pourrait être:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">{</span>
 <span class="x">    &quot;name&quot;: &quot;Example&quot;,</span>
 <span class="x">    &quot;description&quot;: &quot;Example plugin for demonstrating hook system&quot;,</span>
 
-<span class="x">    &quot;author&quot;: &quot;Author Name&quot;</span>
-<span class="x">    &quot;authorEmail&quot;: &quot;author@example.com&quot;</span>
-<span class="x">    &quot;authorUrl&quot;: &quot;http://example.com&quot;</span>
+<span class="x">    &quot;author&quot;: &quot;Author Name&quot;,</span>
+<span class="x">    &quot;authorEmail&quot;: &quot;author@example.com&quot;,</span>
+<span class="x">    &quot;authorUrl&quot;: &quot;http://example.com&quot;,</span>
 
 <span class="x">    &quot;dependencies&quot;: {</span>
 <span class="x">      &quot;plugins&quot;: [</span>
@@ -110,12 +114,12 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>name: your plugin&#8217;s name</li>
-<li>description: your plugin&#8217;s description</li>
-<li>author: your name</li>
-<li>authorEmail: your email address</li>
-<li>authorUrl: your website</li>
-<li>dependencies (optional): list of other plugins that this plugin depends on</li>
+<li>name: le nom de votre plugin</li>
+<li>description: la description de votre plugin</li>
+<li>author: votre nom</li>
+<li>authorEmail: votre adresse email</li>
+<li>authorUrl: votre website</li>
+<li>dependencies (optional): liste des autres plugins dont ce plugin a besoin</li>
 </ul>
 </div>
 
@@ -132,7 +136,7 @@
       <a href="migrations.html" title="Migrations" accesskey="N">next</a>
     </li>
     <li>
-      <a href="file-structure.html" title="File structure" accesskey="P">previous</a>
+      <a href="file-structure.html" title="Structure de Fichier" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

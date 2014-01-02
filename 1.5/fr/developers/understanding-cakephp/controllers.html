@@ -25,9 +25,9 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="up" title="Comprendre CakePHP" href="../understanding-cakephp.html" />
     <link rel="next" title="Components" href="components.html" />
-    <link rel="prev" title="Understanding CakePHP" href="../understanding-cakephp.html" /> 
+    <link rel="prev" title="Comprendre CakePHP" href="../understanding-cakephp.html" /> 
   </head>
   <body>
 <div id="header">
@@ -63,8 +63,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">Controllers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
@@ -76,11 +76,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -94,18 +94,36 @@
         
   <div class="section" id="controllers">
 <h1>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h1>
-<p>Read the CakePHP docs on Controllers: <a class="reference external" href="http://book.cakephp.org/2.0/en/controllers.html">http://book.cakephp.org/2.0/en/controllers.html</a>.</p>
-<div class="section" id="what-is-a-controller">
-<h2>What is a Controller?<a class="headerlink" href="#what-is-a-controller" title="Permalink to this headline">¶</a></h2>
-<p>A controller is used to manage the logic for a part of your application. Most commonly, controllers are used to manage the logic for a single model. For example, if you were building a site for an online bakery, you might have a RecipesController and a IngredientsController managing your recipes and their ingredients. In CakePHP, controllers are named after the model they handle, in plural form.</p>
-<p>The Recipe model is handled by the RecipesController, the Product model is handled by the ProductsController, and so on.</p>
-<p>Your application&#8217;s controllers are classes that extend the CakePHP AppController class, which in turn extends a core Controller class, which are part of the CakePHP library. The AppController class can be defined in <cite>/app/Controller/AppController.php</cite> and it should contain methods that are shared between all of your application’s controllers.</p>
-<p>Controllers can include any number of methods which are usually referred to as actions. Actions are controller methods used to display views. An action is a single method of a controller.</p>
-<p>CakePHP&#8217;s dispatcher calls actions when an incoming request matches a URL to a controller’s action (refer to &#8220;Routes Configuration&#8221; for an explanation on how controller actions and parameters are mapped from the URL).</p>
+<p>Lire la doc de CakePHP sur les Controllers:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/controllers.html">http://book.cakephp.org/2.0/en/controllers.html</a>.</p>
+<div class="section" id="qu-est-ce-qu-un-controller">
+<h2>Qu&#8217;est-ce qu&#8217;un Controller?<a class="headerlink" href="#qu-est-ce-qu-un-controller" title="Permalink to this headline">¶</a></h2>
+<p>Un controller est utilisé pour gérer la logique pour une partie de votre
+application. La plus couramment, les controllers sont utilisés pour gérer la
+logique pour un model unique. Par exemple, si vous construisez un site pour une
+boulangerie en ligne, vous voudrez avoir un RecipesController et un
+IngredientsController gérant vos recipes et leurs ingredients. Dans CakePHP,
+controllers sont appelés d&#8217;après le model qu&#8217;ils gèrent, à la forme plurielle.</p>
+<p>Le model Recipe est géré par le RecipesController, le model Product est géré
+par ProductsController, et ainsi de suite.</p>
+<p>Les controllers de votre application sont des classes qui étendent la classe
+AppController de CakePHP, qui à son tour étend une classe Controller du coeur,
+qui est une partie de la librairie de CakePHP. La classe AppController peut
+être définie dans <cite>/app/Controller/AppController.php</cite> et elle devrait contenir
+les méthodes qui sont partagées entre tous les controllers de votre application.</p>
+<p>Les Controllers peuvent inclure un certain nombre de méthodes qui se référent
+couramment aux actions. Les actions sont les méthodes du Controller utilisées
+pour afficher les views. Une action et une méthode unique d&#8217;un controller.</p>
+<p>Le dispatcher de CakePHP appelle les actions quanf une requête entrante
+matche une URL à une action d&#8217;un controller (réferrez-vous à la &#8220;Configuration
+des Routes&#8221; pour une explication sur la façon dont les actions du controller
+et les paramètres sont mappés à partir de l&#8217;URL).</p>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Returning to our online bakery example, our RecipesController might contain the view(), share(), and search() actions. The controller would be found in /app/Controller/RecipesController.php:</p>
+<p>En retournant à notre exemple de boulangerie en ligne, notre RecipesController
+pourrait contenir les actions view(), share(), et search(). Le controller
+serait trouvé dans /app/Controller/RecipesController.php:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">RecipesController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
 
@@ -124,14 +142,17 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="plugin-controllers">
-<h3>Plugin Controllers<a class="headerlink" href="#plugin-controllers" title="Permalink to this headline">¶</a></h3>
-<p>If it is Recipes plugin&#8217;s controller, it would be found at <cite>/app/Plugin/Recipe/Controller/RecipesController.php</cite>.</p>
+<div class="section" id="les-controllers-du-plugin">
+<h3>Les Controllers du Plugin<a class="headerlink" href="#les-controllers-du-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Si c&#8217;est un controller du plugin Recipes, il sera trouvé dans
+<cite>/app/Plugin/Recipe/Controller/RecipesController.php</cite>.</p>
 </div>
 </div>
-<div class="section" id="how-to-see-it-in-action">
-<h2>How to see it in action?<a class="headerlink" href="#how-to-see-it-in-action" title="Permalink to this headline">¶</a></h2>
-<p>Controllers can be accessed from your browser from the address yoursite.com/controller_name/action_name. But it will show errors now, and we will require to create models and views for it too.</p>
+<div class="section" id="comment-le-voir-en-action">
+<h2>Comment le voir en action?<a class="headerlink" href="#comment-le-voir-en-action" title="Permalink to this headline">¶</a></h2>
+<p>Les Controllers peuvent être accessibles à partir du navigateur à l&#8217;adresse
+yoursite.com/controller_name/action_name. Mais il va maintenant montrer des
+erreurs, et nécessitera aussi de créer des models et views pour celui-ci.</p>
 </div>
 </div>
 
@@ -148,7 +169,7 @@
       <a href="components.html" title="Components" accesskey="N">next</a>
     </li>
     <li>
-      <a href="../understanding-cakephp.html" title="Understanding CakePHP" accesskey="P">previous</a>
+      <a href="../understanding-cakephp.html" title="Comprendre CakePHP" accesskey="P">previous</a>
     </li>
   </ul>
       </div>

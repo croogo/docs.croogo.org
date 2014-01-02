@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tips &mdash; Croogo Docs v1.5.1 documentation</title>
+    <title>Astuces &mdash; Croogo Docs v1.5.1 documentation</title>
     <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/reset.css" type="text/css" />
@@ -63,15 +63,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shells.html">Shells</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#make-it-faster">Make it faster</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Astuces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rendez-le-plus-rapide">Rendez-le plus rapide</a></li>
 </ul>
 </li>
 </ul>
@@ -85,11 +85,13 @@
     <div class="grid_9">
       <div id="content">
         
-  <div class="section" id="tips">
-<h1>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="make-it-faster">
-<h2>Make it faster<a class="headerlink" href="#make-it-faster" title="Permalink to this headline">¶</a></h2>
-<p>Croogo is shipped with debug level 1 enabled. You can disable it in <cite>/app/Config/croogo.php</cite> to make it faster. Replace line 37 with this:</p>
+  <div class="section" id="astuces">
+<h1>Astuces<a class="headerlink" href="#astuces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rendez-le-plus-rapide">
+<h2>Rendez-le plus rapide<a class="headerlink" href="#rendez-le-plus-rapide" title="Permalink to this headline">¶</a></h2>
+<p>Croogo est fourni avec un niveau de debug activé à 1. Vous pouvez le désactiver
+dans <cite>/app/Config/croogo.php</cite> pour le rendre plus rapide. Remplacez la ligne 37
+avec ceci:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;debug&#39;, 0);</span>
 </pre></div>
 </div>

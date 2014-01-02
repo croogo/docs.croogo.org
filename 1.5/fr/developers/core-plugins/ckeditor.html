@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Core plugins" href="../core-plugins.html" />
+    <link rel="up" title="Plugins du Coeur" href="../core-plugins.html" />
     <link rel="next" title="TinyMCE" href="tinymce.html" />
     <link rel="prev" title="Wysiwyg" href="wysiwyg.html" /> 
   </head>
@@ -63,12 +63,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Core plugins</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="wysiwyg.html">Wysiwyg</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Ckeditor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tinymce.html">TinyMCE</a></li>
@@ -76,7 +76,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -92,8 +92,8 @@
 <h1>Ckeditor<a class="headerlink" href="#ckeditor" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>The <cite>Example</cite> plugin contains a sample code to activate Ckeditor
-in <cite>Plugin/Example/Config/bootstrap.php</cite> file:</p>
+<p>Le plugin <cite>Example</cite> contient un code d&#8217;exemple pour activer Ckeditor
+dans le fichier <cite>Plugin/Example/Config/bootstrap.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">$Localization = new L10n();</span>
 <span class="x">Croogo::mergeConfig(&#39;Wysiwyg.actions&#39;, array(</span>
 <span class="x">    &#39;Example/admin_rte_example&#39; =&gt; array(</span>
@@ -124,11 +124,12 @@ in <cite>Plugin/Example/Config/bootstrap.php</cite> file:</p>
 <span class="x">));</span>
 </pre></div>
 </div>
-<p>There are three presets: <cite>basic</cite>, <cite>standard</cite>, and <cite>full</cite>.
-The above code activates multiple Ckeditor instances with different presets.
-The last editor on <cite>ExampleCustom</cite> element shows how to configure the toolbar
-with specific buttons, color and language.</p>
-<p>Consult Ckeditor documentation for further details.</p>
+<p>Il y en a trois prédéfinis: <cite>basic</cite>, <cite>standard</cite>, et <cite>full</cite>.
+Le code ci-dessus active les multiples instances de Ckeditor avec les différents
+prédéfinis.
+Le dernier éditeur de l&#8217;element <cite>ExampleCustom</cite> montre comment configurer la
+barre d&#8217;outils avec des boutons spécifiques, la couleur et le language.</p>
+<p>Consultez la documentation de Ckeditor pour plus de détails.</p>
 </div>
 </div>
 

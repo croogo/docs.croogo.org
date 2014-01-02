@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Core plugins" href="../core-plugins.html" />
+    <link rel="up" title="Plugins du Coeur" href="../core-plugins.html" />
     <link rel="next" title="Translate" href="translate.html" />
     <link rel="prev" title="Ckeditor" href="ckeditor.html" /> 
   </head>
@@ -63,12 +63,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Core plugins</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="wysiwyg.html">Wysiwyg</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ckeditor.html">Ckeditor</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">TinyMCE</a></li>
@@ -76,7 +76,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -91,13 +91,17 @@
   <div class="section" id="tinymce">
 <h1>TinyMCE<a class="headerlink" href="#tinymce" title="Permalink to this headline">¶</a></h1>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 1.5.1: </span>TinyMCE is not included out of the box in 1.5.1.  Ckeditor has been
-is now is the default RTE.</p>
-<p>TinyMCE is a popular WYSIWYG editor by Moxiecode Systems. It is packaged and shipped as a plugin with Croogo.</p>
-<p>By default, the editor loads when you add/edit Nodes in your admin panel. To load it in other places and take more control of it&#8217;s settings, see configuration information below.</p>
+<span class="versionmodified">Changed in version 1.5.1: </span>TinyMCE n&#8217;est pas inclu dans 1.5.1. Ckeditor est maintenant le RTE par
+défaut.</p>
+<p>TinyMCE est un éditeur WYSIWYG populaire de Moxiecode Systems. Il est packagé
+et distribué en plugin avec Croogo.</p>
+<p>Par défaut, l&#8217;éditeur se charge quand vous ajoutez/modifiez les Nodes dans votre
+panneau admin. Pour le charger à d&#8217;autres endroits et avoir plus de contrôle
+sur ses configurations, regardez les informations de configuration ci-dessous.</p>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>Configuration for this at <cite>/app/Plugin/Tinymce/Config/bootstrap.php</cite> looks like this:</p>
+<p>La configuration se trouve dans <cite>/app/Plugin/Tinymce/Config/bootstrap.php</cite> et
+ressemble à ceci:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Tinymce.actions&#39;, array(</span>
 <span class="x">    &#39;Nodes/admin_add&#39; =&gt; array(</span>
 <span class="x">        array(</span>
@@ -117,7 +121,9 @@ is now is the default RTE.</p>
 <span class="x">));</span>
 </pre></div>
 </div>
-<p>For example, if you wanted to load the editor in your Products controller&#8217;s add method for Product model&#8217;s body field, add this line in the end:</p>
+<p>Par exemple, si vous souhaitez charger l&#8217;éditeur dans la méthode add du champ
+body du model Product de votre controller Products, ajoutez cette ligne à la
+fin:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Tinymce.actions&#39;, array(</span>
 <span class="x">    &#39;Nodes/admin_add&#39; =&gt; array(</span>
 <span class="x">        array(</span>

@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="up" title="Comprendre CakePHP" href="../understanding-cakephp.html" />
     <link rel="next" title="Callbacks" href="../callbacks.html" />
     <link rel="prev" title="Views" href="views.html" /> 
   </head>
@@ -63,8 +63,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="components.html">Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
@@ -76,11 +76,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -94,14 +94,20 @@
         
   <div class="section" id="helpers">
 <h1>Helpers<a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h1>
-<p>Read the CakePHP docs on Helpers: <a class="reference external" href="http://book.cakephp.org/2.0/en/views/helpers.html">http://book.cakephp.org/2.0/en/views/helpers.html</a>.</p>
-<div class="section" id="what-is-a-helper">
-<h2>What is a Helper?<a class="headerlink" href="#what-is-a-helper" title="Permalink to this headline">¶</a></h2>
-<p>Helpers are the component-like classes for the presentation layer of your application. They contain presentational logic that is shared between many views, elements, or layouts. This chapter will show you how to create your own helpers, and outline the basic tasks CakePHP&#8217;s core helpers can help you accomplish.</p>
+<p>Lire la doc de CakePHP sur les Helpers:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/views/helpers.html">http://book.cakephp.org/2.0/en/views/helpers.html</a>.</p>
+<div class="section" id="qu-est-ce-qu-un-helper">
+<h2>Qu&#8217;est-ce qu&#8217;un Helper?<a class="headerlink" href="#qu-est-ce-qu-un-helper" title="Permalink to this headline">¶</a></h2>
+<p>Les Helpers sont les classes comme les components mais pour la couche de
+présentation de votre application. Ils contiennent une logique de présentation
+partagée entre plusieurs views, elements ou layouts. Ce chapitre va vous
+montrer comment créer vos propres helpers, et souligne les tâches basiques que
+les helpers du coeur de CakePHP peuvent aider à accomplir.</p>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s say we named our helper Example, and it would be found at <cite>/app/View/Helper/ExampleHelper.php</cite>:</p>
+<p>Disons que nous appelons notre helper Example, et il serait trouvé dans
+<cite>/app/View/Helper/ExampleHelper.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">ExampleHelper</span> <span class="k">extends</span> <span class="nx">AppHelper</span> <span class="p">{</span>
 
@@ -112,14 +118,16 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="plugin-helpers">
-<h3>Plugin helpers<a class="headerlink" href="#plugin-helpers" title="Permalink to this headline">¶</a></h3>
-<p>If it is Example plugin&#8217;s helper, it would be found at <cite>/app/Plugin/Example/View/Helper/ExampleHelper.php</cite>.</p>
+<div class="section" id="les-helpers-du-plugin">
+<h3>Les helpers du Plugin<a class="headerlink" href="#les-helpers-du-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Si c&#8217;est un helper du plugin Example, il sera trouvé dans
+<cite>/app/Plugin/Example/View/Helper/ExampleHelper.php</cite>.</p>
 </div>
 </div>
-<div class="section" id="using-helpers-in-views">
-<h2>Using Helpers in Views<a class="headerlink" href="#using-helpers-in-views" title="Permalink to this headline">¶</a></h2>
-<p>Before using helpers in views, we need to let our Controller know to get it loaded:</p>
+<div class="section" id="utilisation-des-helpers-dans-les-views">
+<h2>Utilisation des Helpers dans les Views<a class="headerlink" href="#utilisation-des-helpers-dans-les-views" title="Permalink to this headline">¶</a></h2>
+<p>Avant d&#8217;utiliser les helpers dans les views, nous avons besoin de le faire
+connaître à notre Controller en le chargeant:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">RecipesController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
 
@@ -139,7 +147,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now we can use the helper from our view at /app/View/Recipes/view.ctp:</p>
+<p>Maintenant, nous pouvons utiliser le helper à partir de notre view dans
+/app/View/Recipes/view.ctp:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;div class=&quot;recipes view&quot;&gt;</span>
 <span class="x">    &lt;h2&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$recipe</span><span class="p">[</span><span class="s1">&#39;Recipe&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
 

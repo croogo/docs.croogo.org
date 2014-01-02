@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Core plugins" href="../core-plugins.html" />
+    <link rel="up" title="Plugins du Coeur" href="../core-plugins.html" />
     <link rel="next" title="Shells" href="../shells.html" />
     <link rel="prev" title="TinyMCE" href="tinymce.html" /> 
   </head>
@@ -63,12 +63,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Core plugins</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="wysiwyg.html">Wysiwyg</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ckeditor.html">Ckeditor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tinymce.html">TinyMCE</a></li>
@@ -76,7 +76,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -90,9 +90,12 @@
         
   <div class="section" id="translate">
 <h1>Translate<a class="headerlink" href="#translate" title="Permalink to this headline">¶</a></h1>
-<p>Translate plugin is one of the core plugins that is shipped with Croogo. If your website requires content in multiple languages (i18n), just activate it and you start translating right from your admin panel.</p>
-<p>Once active, you will see a Translate link under &#8216;Actions&#8217; column where Edit and Delete links are present.</p>
-<p>By default, it takes care of translations for these models:</p>
+<p>Le plugin Translate est l&#8217;un des plugins du coeur qui est fourni avec Croogo.
+Si votre website nécessite du contenu dans plusieurs languages (i18n), activez
+le juste et vous commencez à traduire à partir de votre panneau admin.</p>
+<p>Une fois activé, vous verrz un lien Translate sous la colonne &#8216;Actions&#8217; où
+les liens Edit et Delete sont présents.</p>
+<p>Par défaut, il s&#8217;occupe des traductions pour ces models:</p>
 <ul class="simple">
 <li>Node</li>
 <li>Block</li>
@@ -100,7 +103,8 @@
 </ul>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>Configuration for this at <cite>/app/Plugin/Translate/Config/bootstrap.php</cite> looks like this:</p>
+<p>La configuration pour ceci dans <cite>/app/Plugin/Translate/Config/bootstrap.php</cite>
+ressemble à ceci:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Translate.models&#39;, array(</span>
 <span class="x">    &#39;Node&#39; =&gt; array(</span>
 <span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>
@@ -118,7 +122,8 @@
 <span class="x">));</span>
 </pre></div>
 </div>
-<p>Now if you want your contact forms to be translated too, just add Contact model&#8217;s name to the plugin&#8217;s bootstrap like this:</p>
+<p>Maintenant si vous voulez que les formulaires de contact soient aussi traduits,
+ajoutez juste le nom du model Contact au bootstrap du plugin comme ceci:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">Configure::write(&#39;Translate.models&#39;, array(</span>
 <span class="x">    &#39;Node&#39; =&gt; array(</span>
 <span class="x">        &#39;title&#39; =&gt; &#39;titleTranslation&#39;,</span>

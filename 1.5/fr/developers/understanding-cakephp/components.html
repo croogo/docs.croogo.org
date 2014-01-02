@@ -25,7 +25,7 @@
     </script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Croogo Docs v1.5.1 documentation" href="../../index.html" />
-    <link rel="up" title="Understanding CakePHP" href="../understanding-cakephp.html" />
+    <link rel="up" title="Comprendre CakePHP" href="../understanding-cakephp.html" />
     <link rel="next" title="Models" href="models.html" />
     <link rel="prev" title="Controllers" href="controllers.html" /> 
   </head>
@@ -63,8 +63,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../administrators.html">Administrateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../designers.html">Designers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../developers.html">Développeurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Working with Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Understanding CakePHP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../working-with-git.html">Travailler avec Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../understanding-cakephp.html">Comprendre CakePHP</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
@@ -76,11 +76,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../callbacks.html">Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">View Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../view-blocks.html">Les Blocks de View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins.html">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Core plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-plugins.html">Plugins du Coeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shells.html">Shells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips.html">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips.html">Astuces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../translators.html">Traducteurs</a></li>
@@ -94,14 +94,19 @@
         
   <div class="section" id="components">
 <h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
-<p>Read the CakePHP docs on Components: <a class="reference external" href="http://book.cakephp.org/2.0/en/controllers/components.html">http://book.cakephp.org/2.0/en/controllers/components.html</a>.</p>
-<div class="section" id="what-is-a-component">
-<h2>What is a Component?<a class="headerlink" href="#what-is-a-component" title="Permalink to this headline">¶</a></h2>
-<p>Components are packages of logic that are shared between controllers. If you find yourself wanting to copy and paste things between controllers, you might consider wrapping some functionality in a component.</p>
+<p>Lire la doc de CakePHP sur les Components:
+<a class="reference external" href="http://book.cakephp.org/2.0/en/controllers/components.html">http://book.cakephp.org/2.0/en/controllers/components.html</a>.</p>
+<div class="section" id="qu-est-ce-qu-un-component">
+<h2>Qu&#8217;est-ce qu&#8217;un Component?<a class="headerlink" href="#qu-est-ce-qu-un-component" title="Permalink to this headline">¶</a></h2>
+<p>Les Components sont des packages de logique qui sont partagés entre les
+controllers. Si vous trouvez vous-même que vous copiez et collez des choses
+entre les controllers, vous devriez considérer d&#8217;emballer quelques
+fonctionnalités dans un component.</p>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Assuming you want to create an Example component, it would be found at <cite>/app/Controller/Component/ExampleComponent.php</cite>:</p>
+<p>En admettant que vous vouliez créer un component Example, il sera trouvé dans
+<cite>/app/Controller/Component/ExampleComponent.php</cite>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">ExampleComponent</span> <span class="k">extends</span> <span class="nx">Component</span> <span class="p">{</span>
 
@@ -112,13 +117,14 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="plugin-components">
-<h3>Plugin components<a class="headerlink" href="#plugin-components" title="Permalink to this headline">¶</a></h3>
-<p>If it Example plugin&#8217;s component, it would be found at <cite>/app/Plugin/Example/Controller/Component/ExampleComponent.php</cite>.</p>
+<div class="section" id="components-de-plugin">
+<h3>Components de Plugin<a class="headerlink" href="#components-de-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Si un component du plugin Example, il sera trouvé dans
+<cite>/app/Plugin/Example/Controller/Component/ExampleComponent.php</cite>.</p>
 </div>
 </div>
-<div class="section" id="using-components-in-controllers">
-<h2>Using Components in Controllers<a class="headerlink" href="#using-components-in-controllers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="utilisation-de-components-dans-les-controllers">
+<h2>Utilisation de Components dans les Controllers<a class="headerlink" href="#utilisation-de-components-dans-les-controllers" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">RecipesController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
 
